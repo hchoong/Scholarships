@@ -58,6 +58,7 @@
         <input type="text" class="input-block-level" placeholder="NetID">
         <input type="password" class="input-block-level" placeholder="Password">
         <button class="btn btn-large btn-danger" type="submit">Sign in</button>
+        <button class="btn btn-primary" type="submit">Click</button>
       </form>
 
     </div>
