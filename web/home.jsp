@@ -107,7 +107,7 @@
                     <a href="#" class="hrefcolor">Log out</a>
                 </div>
                 <div class="span10">
-                    <h3>Home</h3>
+                    <h3>Home </h3>
                     <pre class="pre-scrollable textblock"><h5><strong>Announcements</strong></h5><small>No current announcements.</small></pre>
                 </div>
             </div>
