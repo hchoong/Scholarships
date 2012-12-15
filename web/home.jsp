@@ -20,15 +20,7 @@
             }
             .backcolorlightgrey
             {
-                background-color: #E9E9E9
-            }
-            .btnsize
-            {
-                width:150px;
-            }
-            .spacing
-            {
-                height: 50px;
+                background-color: #E9E9E9;
             }
             .nintypercentwidth
             {
@@ -76,9 +68,13 @@
             {
                 height: 100%;
             }
-            .tableheight
+            .frameheight
             {
-                height: 1000px;
+                height: 800px;
+            }
+            .hundredpercentheight
+            {
+                height: 100%;
             }
             .black
             {
@@ -90,25 +86,31 @@
                 vertical-align:text-top;
             }
         </style>
+        <script type="text/javascript">
+            function loadHomeContent()
+            {
+                document.getElementById("main").src="homecontent.jsp";
+            }
+        </script>
     </head>
-    <body class="content">
+    <body class="content" onload="loadHomeContent()">
         <div id="topbanner" class="topbannerwidth">
             <img src="img/banner1.png"/>
         </div>
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <div class="span2 color_red navfont">
-                    <a href="#" class="hrefcolor">Home</a><br /><br />
-                    <a href="#" class="hrefcolor">Profile</a><br /><br />
+        <div class="container-fluid hundredpercentheight">
+            <div class="row-fluid frameheight">
+                <div class="span2 color_red navfont hundredpercentheight">
+                    <a href="homecontent.jsp" target="main" class="hrefcolor">Home</a><br /><br />
+                    <a href="profile.jsp" target="main" class="hrefcolor">Profile</a><br /><br />
                     <a href="#" class="hrefcolor">Scholarships</a><br /><br />
                     <a href="#" class="hrefcolor">Applications</a><br /><br />
                     <a href="#" class="hrefcolor">Documents</a><br /><br />
                     <a href="#" class="hrefcolor">Manage</a><br /><br />
                     <a href="#" class="hrefcolor">Log out</a>
                 </div>
-                <div class="span10">
-                    <h3>Home </h3>
-                    <pre class="pre-scrollable textblock"><h5><strong>Announcements</strong></h5><small>No current announcements.</small></pre>
+                <div class="span10 hundredpercentheight">
+                    <iframe id="main" class="hundredpercentwidth frameheight" seamless="seamless" >
+                    </iframe>
                 </div>
             </div>
         </div>
