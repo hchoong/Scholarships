@@ -38,7 +38,7 @@
     <body onload="toggleCreateScholarship()">
         <div class="scholarshipcreate" id="create">
             <br />
-            <a class="btn btn-danger" id="createscholarshipbtn" href="scholarship_create.jsp">Create a Scholarship</a>
+            <a class="btn btn-danger" id="createscholarshipbtn" href="scholarshipcreate.jsp">Create a Scholarship</a>
         </div>
         <div class="content">
             <table id="schoarshiptable" class="table-condensed table-bordered">
