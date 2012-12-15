@@ -55,9 +55,11 @@
             <h2 class="form-signin-heading form-heading-text"><img src = "img/sbulogo.png" /> Scholarship System Sign-in</h2>
       <form class="form-signin">
         
-        <input type="text" class="input-block-level" placeholder="NetID">
+        <input type="text" class="input-block-level" placeholder="Username">
         <input type="password" class="input-block-level" placeholder="Password">
-        <button class="btn btn-large btn-danger" type="submit">Sign in</button>
+        <button class="btn btn-danger" type="submit">Sign in</button>
+        <br /><br />
+        <a href="usercreate.jsp">Create an account</a>
       </form>
 
     </div>
