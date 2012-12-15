@@ -85,6 +85,10 @@
                 text-align: left;
                 vertical-align:text-top;
             }
+            .navpadding
+            {
+                padding-left: 30px;
+            }
         </style>
         <script type="text/javascript">
             function loadHomeContent()
@@ -99,7 +103,7 @@
         </div>
         <div class="container-fluid hundredpercentheight">
             <div class="row-fluid frameheight">
-                <div class="span2 color_red navfont hundredpercentheight">
+                <div class="span2 color_red navfont hundredpercentheight navpadding">
                     <a href="homecontent.jsp" target="main" class="hrefcolor">Home</a><br /><br />
                     <a href="userprofile.jsp" target="main" class="hrefcolor">Profile</a><br /><br />
                     <a href="#" class="hrefcolor">Scholarships</a><br /><br />
