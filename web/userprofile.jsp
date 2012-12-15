@@ -14,9 +14,7 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
         <title>Profile</title>
-        <!--<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        $(".tabs").tabs();});</script>  -->
+       
     </head>
     <body>
         <h3>Profile</h3>
@@ -24,6 +22,7 @@
             <li class="active"><a href="#personal" data-toggle="tab">Personal Information</a></li>
             <li><a href="#demographic" data-toggle="tab">Demographic Information</a></li>
             <li><a href="#additional" data-toggle="tab">Additional Information</a></li>
+              <li><a href="#additional" data-toggle="tab">Files</a></li>
         </ul>
         
         <div id="my-tab-content" class="tab-content">
@@ -55,7 +54,17 @@
                 </table>
             </div>
             <div class="tab-pane" id="demographic">
-                
+                <h5>Gender Information</h5>
+                <style>
+                   #test { padding-left: 1px;
+                   }
+                   
+                </style>
+                <form id ="test">
+                <input type="radio" name="sex" value="male">&nbsp; Male<br>
+                <input type="radio" name="sex" value="female">&nbsp; Female
+                </form>
+                </div>
             </div>
             <div class="tab-pane" id="additional">
                 
