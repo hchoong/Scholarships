@@ -26,7 +26,7 @@
 </head>
 <body>
     <h4>Create a New Scholarship</h4>
-    <form action="" name="scholarship-create" method="post" class="form-horizontal">
+    <form action="ScholarshipCreate" name="scholarship-create" method="post" class="form-horizontal">
         <div class="control-group">
             <label class="control-label" for="name">Name: </label>
             <div class="controls">
@@ -48,7 +48,7 @@
         <div class="control-group">
             <label class="control-label" for="amount">Amount: </label>
             <div class="controls">
-                <input type="text" name="qualifications" value=""/>
+                <input type="text" name="amount" value=""/>
             </div>
         </div>
         <div class="control-group">
@@ -77,7 +77,7 @@
                         <label class="checkbox"><input type="checkbox" /> GPA</label>
                     </td>
                     <td>
-                        <input type="text" class="input-small" placeholder="Min GPA" />
+                        <input type="text" name="gpa" class="input-small" placeholder="Min GPA" />
                     </td>
                 </tr>
                 <tr>
@@ -85,7 +85,7 @@
                         <label class="checkbox"><input type="checkbox" /> Major</label> 
                     </td>
                     <td>
-                        <input type="text" class="input-small" placeholder="Major"/>
+                        <input type="text" name="major" class="input-small" placeholder="Major"/>
                     </td>
                 </tr>
                 
@@ -94,7 +94,7 @@
                         <label class="checkbox"><input type="checkbox" class="checkbox"> Ethnicity</label>
                     </td>
                     <td>
-                        <input type="text" class="input-small" placeholder="Ethnicity"/>
+                        <input type="text" name="ethnicity" class="input-small" placeholder="Ethnicity"/>
                     </td>
                 </tr>
                 <tr>
@@ -102,7 +102,7 @@
                         <label class="checkbox"><input type="checkbox" class="checkbox"> Statement</label>
                     </td>
                     <td>
-                        <input type="text" class="input" placeholder="Statement Name"/>
+                        <input type="text" name="statement" class="input" placeholder="Statement Name"/>
                     </td>
                 </tr>
                 <tr>
@@ -110,7 +110,7 @@
                         <label class="checkbox"><input type="checkbox" class="checkbox"> Recommendation</label>
                     </td>
                     <td>
-                        <input type="text" class="input" placeholder="Recommendation Name"/>
+                        <input type="text" name="recommendation" class="input" placeholder="Recommendation Name"/>
                     </td>
                 </tr>
             </table>
@@ -124,7 +124,7 @@
         </div>
         <div class="button-group">
             <input class="btn btn-primary" type="submit" value="Submit"/>
-            <input class="btn btn-primary" type="button" value="Cancel"/>
+            <input class="btn btn-primary" type="button" onclick="javascript:history.go(-1)" value="Cancel"/>
             <input class="btn btn-primary" type="reset" value="Reset"/>
         </div>
     </form>

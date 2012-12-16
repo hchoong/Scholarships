@@ -17,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -38,9 +39,10 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Scholarships.findByQualifications", query = "SELECT s FROM Scholarships s WHERE s.qualifications = :qualifications"),
     @NamedQuery(name = "Scholarships.findByAmount", query = "SELECT s FROM Scholarships s WHERE s.amount = :amount"),
     @NamedQuery(name = "Scholarships.findByQuantity", query = "SELECT s FROM Scholarships s WHERE s.quantity = :quantity"),
-    @NamedQuery(name = "Scholarships.findByAcademicYear", query = "SELECT s FROM Scholarships s WHERE s.academicYear = :academicYear"),
-    @NamedQuery(name = "Scholarships.findByMajor", query = "SELECT s FROM Scholarships s WHERE s.major = :major")})
+    @NamedQuery(name = "Scholarships.findByAcademicYear", query = "SELECT s FROM Scholarships s WHERE s.academicYear = :academicYear")})
 public class Scholarships implements Serializable {
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "scholarshipsId")
+    private List<Criteria> criteriaList;
     @Basic(optional = false)
     @Column(name = "deadline")
     @Temporal(TemporalType.DATE)
@@ -69,11 +71,8 @@ public class Scholarships implements Serializable {
     @Basic(optional = false)
     @Column(name = "academic_year")
     private String academicYear;
-    @Basic(optional = false)
-    @Column(name = "major")
-    private String major;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "scholarshipsId")
-    private List<Criteria> criteriaList;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "scholarshipsId")
+    private Criteria criteria;
 
     public Scholarships() {
     }
@@ -82,7 +81,7 @@ public class Scholarships implements Serializable {
         this.scholarshipsId = scholarshipsId;
     }
 
-    public Scholarships(Integer scholarshipsId, String name, String descriptions, String qualifications, int amount, int quantity, String academicYear, String major) {
+    public Scholarships(Integer scholarshipsId, String name, String descriptions, String qualifications, int amount, int quantity, String academicYear) {
         this.scholarshipsId = scholarshipsId;
         this.name = name;
         this.descriptions = descriptions;
@@ -90,7 +89,6 @@ public class Scholarships implements Serializable {
         this.amount = amount;
         this.quantity = quantity;
         this.academicYear = academicYear;
-        this.major = major;
     }
 
     public Integer getScholarshipsId() {
@@ -149,21 +147,13 @@ public class Scholarships implements Serializable {
         this.academicYear = academicYear;
     }
 
-    public String getMajor() {
-        return major;
-    }
-
-    public void setMajor(String major) {
-        this.major = major;
-    }
-
     @XmlTransient
-    public List<Criteria> getCriteriaList() {
-        return criteriaList;
+    public Criteria getCriteria() {
+        return criteria;
     }
 
-    public void setCriteriaList(List<Criteria> criteriaList) {
-        this.criteriaList = criteriaList;
+    public void setCriteria(Criteria criteria) {
+        this.criteria = criteria;
     }
 
     @Override
@@ -197,6 +187,15 @@ public class Scholarships implements Serializable {
 
     public void setDeadline(Date deadline) {
         this.deadline = deadline;
+    }
+
+    @XmlTransient
+    public List<Criteria> getCriteriaList() {
+        return criteriaList;
+    }
+
+    public void setCriteriaList(List<Criteria> criteriaList) {
+        this.criteriaList = criteriaList;
     }
     
 }

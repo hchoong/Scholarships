@@ -58,7 +58,7 @@
                 <c:forEach var="s" begin="0" items="${requestScope.scholarships}">
                     <tr>
                         <td>${s.name}</td> 
-                        <td>${s.major}</td> 
+                        <td></td> 
                         <td>${s.academicYear}</td>
                         <td>${s.deadline}</td>
                     </tr>                         
