@@ -9,8 +9,28 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
         <link href="css/bootstrap-responsive.css" rel="stylesheet">
     </head>
+    <style type="text/css">
+            .inputdiv
+            {
+               
+                
+                
+            }
+            .heading
+            {
+                width: 100%;
+                background-color: gainsboro;
+                border-radius: 5px;
+                
+            }
+        </style>
     <body>
-        <h5>My Applications</h5>
+        <h3>Applications</h3>
+        
+         <div class="heading">
+                <h5>&nbsp;My Applications</h5>
+            </div>
+        
         <table class="table table-bordered">
             <thead>
                 <tr>
