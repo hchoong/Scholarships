@@ -21,9 +21,7 @@
                  <td>
                     <h5>Resumes</h5>
                  </td>
-                 <td>
-                        <button class="btn btn-danger" type="submit">Add</button>
-                 </td>
+                 
              </tr>
              <tr>
                  <td>
@@ -32,6 +30,9 @@
                              <td>
                                  No resumes have been submitted at this time.
                              </td>
+                             <td>
+                        <button class="btn btn-danger" type="submit">Add</button>
+                 </td>
                          </tr>
                          
                      </table>
@@ -41,9 +42,7 @@
                  <td>
                      <h5>Transcripts</h5>
                  </td>
-                 <td>
-                        <button class="btn btn-danger" type="submit">Add</button>
-                 </td>
+                 
              </tr>
              <tr>
                  <td>
@@ -52,6 +51,9 @@
                              <td>
                                  No transcripts have been submitted at this time.
                              </td>
+                             <td>
+                        <button class="btn btn-danger" type="submit">Add</button>
+                 </td>
                          </tr>
                          
                      </table>
@@ -61,9 +63,7 @@
                  <td>
                      <h5>References</h5>
                  </td>
-                 <td>
-                        <button class="btn btn-danger" type="submit">Add</button>
-                 </td>
+                 
              </tr>
              <tr>
                  <td>
@@ -72,6 +72,9 @@
                              <td>
                                  No references have been submitted at this time.
                              </td>
+                             <td>
+                        <button class="btn btn-danger" type="submit">Add</button>
+                        </td>
                          </tr>
                          
                      </table>
@@ -81,9 +84,7 @@
                  <td>
                      <h5>Cover Letters</h5>
                  </td>
-                 <td>
-                        <button class="btn btn-danger" type="submit">Add</button>
-                 </td>
+                
              </tr>
              <tr>
                  <td>
@@ -92,6 +93,9 @@
                              <td>
                                  No cover letters have been submitted at this time.
                              </td>
+                              <td>
+                        <button class="btn btn-danger" type="submit">Add</button>
+                 </td>
                          </tr>
                          
                      </table>
