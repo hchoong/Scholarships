@@ -12,13 +12,59 @@
         <title>Review Application</title>
         <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="css/all.css" />
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
+        <style>
+            .input-xsmall
+            {
+                width: 15px;
+            }
+            .text-font
+            {
+                font-size: 15px;
+            }
+            .num
+            {
+                padding-bottom: 2px;
+            }
+            body
+            {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
     </head>
     <body>
         <div name="top">
-            <
-            <input type="textarea" />
+            <h3>Review Applicant</h3>
+            <div class="form-box">
+                <div class="heading"><h5>Criteria</h5></div>
+                <div class="text-font">
+                <label>GPA</label><input type="text" class="input-xsmall" />/10
+                <label>Personal Statement</label>
+                <input type="text" class="input-xsmall" />/10
+                <label>Recommendation Letter</label>
+                <input type="text" class="input-xsmall" />/10
+                <label>Major</label>
+                <input type="text" class="input-xsmall" />/10
+                </div>
+            </div>
+
+            <div class="form-box">
+                <div class="heading"><h5>Reviewer's Comments</h5></div>
+                <textarea class="textarea-big" type="textarea" cols="0" rows="5"  ></textarea>
+                <div align="right">
+               <button class="btn btn-danger" name="submitreview">SUBMIT REVIEW</button> 
+            </div>
+            </div>
+            
+            
+                    
         </div>
+        <div name="bottom" class="form-box">
+            <%@include  file="userapplicationinfo.jsp" %> >
+        </div>
+        
     </body>
 </html>
