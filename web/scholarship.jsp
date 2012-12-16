@@ -21,12 +21,7 @@
             }            
         </script>
         <style type="text/css">
-            body
-            {
-                margin-right: auto;
-                margin-left: auto;
-                width: 800px;
-            }
+         
             .scholarshipcreate
             {
                 text-align: right; 
@@ -41,9 +36,10 @@
     <body onload="toggleCreateScholarship()">
         <h3>Scholarships</h3>
         <div class="scholarshipcreate" id="create">
-            <br />
+            
             <a class="btn btn-danger" id="createscholarshipbtn" href="scholarshipcreate.jsp">Create a Scholarship</a>
         </div>
+        <br/>
         <div class="content">
             <table id="scholarshiptable">
                 <thead>

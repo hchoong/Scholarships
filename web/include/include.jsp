@@ -4,7 +4,6 @@
     Author     : Howie
 --%>
 
-<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Jquery -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -16,4 +15,3 @@
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <!-- Project css -->
     <link href="css/all.css" rel="stylesheet" media="screen">
-</head>

@@ -28,7 +28,6 @@
                 width: 100%;
                 background-color: gainsboro;
                 border-radius: 5px;
-                
             }
         </style>
     <body>
@@ -261,11 +260,9 @@
                 <h5>&nbsp;GPA</h5>
             </div>
                 <h6>Major GPA</h6>
-                <input type="text" id="majorgpa"/>
+                <input type="text" class="input-small" id="majorgpa"/>
                 <h6>Overall GPA</h6>
-                <input type="text" id="overallgpa"/>
-
-
+                <input type="text" class="input-small" id="overallgpa"/>
             </div>
         </div>
     </body>

@@ -6,7 +6,7 @@
         Purpose of the stylesheet follows.
 */
 
-body {
+.loginbody {
     padding-top: 40px;
     padding-bottom: 40px;
     background-color: #FFFFFF;
@@ -47,5 +47,22 @@ input[type="date"] {
     text-align: center;
     margin-left:auto;
     margin-right:auto;
+}
+
+.heading
+{
+    width: 100%;
+    background-color: gainsboro;
+    border-radius: 5px;
+}
+
+.textarea-big
+{
+    width: 98%;
+}
+
+.form-box
+{
+    width: 50%;
 }
 

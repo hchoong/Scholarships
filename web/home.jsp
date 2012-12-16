@@ -110,10 +110,11 @@
                 <div class="span2 color_red navfont hundredpercentheight navpadding">
                     <a href="homecontent.jsp" target="main" class="hrefcolor">Home</a><br /><br />
                     <a href="userprofile.jsp" target="main" class="hrefcolor">Profile</a><br /><br />
-                    <a href="scholarship.jsp" target="main" class="hrefcolor">Scholarships</a><br /><br />
+                    <a href="ScholarshipList" target="main" class="hrefcolor">Scholarships</a><br /><br />
                     <a href="userapplications.jsp" target="main" class="hrefcolor">Applications</a><br /><br />
                     <a href="documents.jsp" target="main"class="hrefcolor">Documents</a><br /><br />
                     <a href="accountsettings.jsp" target="main" class="hrefcolor">Settings</a><br /><br />
+                    <a href="#" target="main" class="hrefcolor">Help</a><br /><br />
                     <a href="Logout" class="hrefcolor">Log out</a>
                 </div>
                 <div class="span10 hundredpercentheight">
