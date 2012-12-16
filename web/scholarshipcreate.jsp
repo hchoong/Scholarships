@@ -13,13 +13,19 @@
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-    $(function() {
-        $( "#datepicker" ).datepicker();
-    });
+        $(function() {
+            $( "#datepicker" ).datepicker();
+        });
     </script>
+    <style type="text/css">
+        .criteria
+        {
+            padding-left: 100px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Scholarship</h1>
+    <h4>Create a New Scholarship</h4>
     <form action="" name="scholarship-create" method="post" class="form-horizontal">
         <div class="control-group">
             <label class="control-label" for="name">Name: </label>
@@ -62,6 +68,59 @@
             <div class="controls">
                 <input type="text" name="academic_year" value=""/>
             </div>
+        </div>
+        <div class="criteria">
+            <h5>Criteria</h5>
+            <table class="table-condensed">
+                <tr>
+                    <td>
+                        <label><input type="checkbox" /> GPA</label>
+                    </td>
+                    <td>
+                        <input type="text" class="input-small" placeholder="Min GPA" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label><input type="checkbox" /> Major</label> 
+                    </td>
+                    <td>
+                        <input type="text" class="input-small" placeholder="Major"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <label><input type="checkbox" class="checkbox"> Ethnicity</label>
+                    </td>
+                    <td>
+                        <input type="text" class="input-small" placeholder="Ethnicity"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label><input type="checkbox" class="checkbox"> Statement</label>
+                    </td>
+                    <td>
+                        <input type="text" class="input" placeholder="Statement Name"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label><input type="checkbox" class="checkbox"> Recommendation</label>
+                    </td>
+                    <td>
+                        <input type="text" class="input" placeholder="Recommendation Name"/>
+                    </td>
+                </tr>
+            </table>
+                
+
+                
+
+                
+
+                
         </div>
         <div class="button-group">
             <input class="btn btn-primary" type="submit" value="Submit"/>
