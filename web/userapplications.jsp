@@ -10,18 +10,11 @@
         <link href="css/bootstrap-responsive.css" rel="stylesheet">
     </head>
     <style type="text/css">
-            .inputdiv
-            {
-               
-                
-                
-            }
             .heading
             {
                 width: 100%;
                 background-color: gainsboro;
                 border-radius: 5px;
-                
             }
         </style>
     <body>

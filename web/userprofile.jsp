@@ -28,7 +28,6 @@
                 width: 100%;
                 background-color: gainsboro;
                 border-radius: 5px;
-                
             }
         </style>
     <body>
