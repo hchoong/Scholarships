@@ -36,6 +36,7 @@
         </style>
     </head>
     <body onload="toggleCreateScholarship()">
+        <h3>Scholarships</h3>
         <div class="scholarshipcreate" id="create">
             <br />
             <a class="btn btn-danger" id="createscholarshipbtn" href="scholarshipcreate.jsp">Create a Scholarship</a>

@@ -16,6 +16,21 @@
         <title>Profile</title>
 
     </head>
+    <style type="text/css">
+            .inputdiv
+            {
+               
+                
+                
+            }
+            .heading
+            {
+                width: 100%;
+                background-color: gainsboro;
+                border-radius: 5px;
+                
+            }
+        </style>
     <body>
         <h3>Profile</h3>
         <ul class="nav nav-tabs"data-tabs="tabs">
@@ -26,7 +41,9 @@
 
         <div id="my-tab-content" class="tab-content">
             <div class="tab-pane active" id="personal">
-                <h5>Name</h5>
+                <div class="heading">
+                <h5>&nbsp;Name</h5>
+            </div>
                 <table class="table">
                     <tr>
                         <td>
@@ -52,72 +69,10 @@
                     </tr>
                 </table>
                 <br/>
-                <h5>Address</h5>
-                <!--<form>
-                    <label class ="text">
-                Address One: <input type="text" name="address"><br/><br/>
-                Address Two: <input type="text" name="address2"><br/><br/>
-                City: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="text" name="city"><br/><br/>
-                State:   &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    
-                          <select name="State"> 
-                            <option value="" selected="selected">Select a State</option> 
-                            <option value="AL">Alabama</option> 
-                            <option value="AK">Alaska</option> 
-                            <option value="AZ">Arizona</option> 
-                            <option value="AR">Arkansas</option> 
-                            <option value="CA">California</option> 
-                            <option value="CO">Colorado</option> 
-                            <option value="CT">Connecticut</option> 
-                            <option value="DE">Delaware</option> 
-                            <option value="DC">District Of Columbia</option> 
-                            <option value="FL">Florida</option> 
-                            <option value="GA">Georgia</option> 
-                            <option value="HI">Hawaii</option> 
-                            <option value="ID">Idaho</option> 
-                            <option value="IL">Illinois</option> 
-                            <option value="IN">Indiana</option> 
-                            <option value="IA">Iowa</option> 
-                            <option value="KS">Kansas</option> 
-                            <option value="KY">Kentucky</option> 
-                            <option value="LA">Louisiana</option> 
-                            <option value="ME">Maine</option> 
-                            <option value="MD">Maryland</option> 
-                            <option value="MA">Massachusetts</option> 
-                            <option value="MI">Michigan</option> 
-                            <option value="MN">Minnesota</option> 
-                            <option value="MS">Mississippi</option> 
-                            <option value="MO">Missouri</option> 
-                            <option value="MT">Montana</option> 
-                            <option value="NE">Nebraska</option> 
-                            <option value="NV">Nevada</option> 
-                            <option value="NH">New Hampshire</option> 
-                            <option value="NJ">New Jersey</option> 
-                            <option value="NM">New Mexico</option> 
-                            <option value="NY">New York</option> 
-                            <option value="NC">North Carolina</option> 
-                            <option value="ND">North Dakota</option> 
-                            <option value="OH">Ohio</option> 
-                            <option value="OK">Oklahoma</option> 
-                            <option value="OR">Oregon</option> 
-                            <option value="PA">Pennsylvania</option> 
-                            <option value="RI">Rhode Island</option> 
-                            <option value="SC">South Carolina</option> 
-                            <option value="SD">South Dakota</option> 
-                            <option value="TN">Tennessee</option> 
-                            <option value="TX">Texas</option> 
-                            <option value="UT">Utah</option> 
-                            <option value="VT">Vermont</option> 
-                            <option value="VA">Virginia</option> 
-                            <option value="WA">Washington</option> 
-                            <option value="WV">West Virginia</option> 
-                            <option value="WI">Wisconsin</option> 
-                            <option value="WY">Wyoming</option>
-                            </select><br/><br/>
-                  Zip code:  &nbsp; &nbsp; &nbsp;<input type="text" name="zipcode"><br/><br/>
-                  Country: &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" name="country"><br/>
+                <div class="heading">
+                <h5>&nbsp;Address</h5>
+            </div>
                 
-                        <label/> 
-                </form> -->
                 <style>
                     #widthforlabel{
                         width: 20%;
@@ -223,7 +178,9 @@
 
             </div>
             <div class="tab-pane" id="demographic">
-                <h5>Gender Information</h5>
+                <div class="heading">
+                <h5>&nbsp;Gender Information</h5>
+            </div>
                 <style>
                     #test { padding-left: 1px;
                     }
@@ -237,7 +194,9 @@
                     </label>
                 </form>
                 <br/>
-                <h5>Ethnicity (Optional)</h5>
+                <div class="heading">
+                <h5>&nbsp;Ethnicity (Optional)</h5>
+            </div>
                 <form id ="test">
                     <label class="radio">
                         <input type="radio" name="ethnicity" value="asian"/>&nbsp;Asian<br>
@@ -250,16 +209,20 @@
                     </label>
                 </form>
                 <br/>
-                <h5>U.S. Veteran Status</h5>
+                <div class="heading">
+                <h5>&nbsp;U.S. Veteran Status</h5>
+            </div>
                 <form id ="test">
                     <label class="radio">
-                        <input type="radio" name="veteran" value="yes"/>&nbsp;Yes<br>
-                        <input type="radio" name="veteran" value="no"/>&nbsp;No<br/>
+                        <input type="radio" name="veteran" value="yes"/>&nbsp;U.S. Veteran<br>
+                        <input type="radio" name="veteran" value="no"/>&nbsp;Not a U.S. Veteran<br/>
                     </label>
                 </form>
                 </form>
                 <br/>
-                <h5>Disability Status</h5>
+               <div class="heading">
+                <h5>&nbsp;Disability Status</h5>
+            </div>
                 <form id ="test">
                     <label class="radio">
                         <input type="radio" name="disabled" value="yes"/>&nbsp;Yes<br>
@@ -270,25 +233,33 @@
 
             </div>
             <div class="tab-pane" id="additional">
-                <h5>Major</h5>
+                <div class="heading">
+                <h5>&nbsp;Major</h5>
+            </div>
                 <select>
+                      <option value="" selected="selected">Select a Major</option> 
                     <option value="art">Art</option>
                     <option value="aas">Asian American Studies</option>
                     <option value="cse">Computer Science</option>
                     <option value="his">History</option>
                     <option value="soc">Sociology</option>
                 </select>
-                <br/>
-                <h5>Minor</h5>
+                <br/><br/>
+              <div class="heading">
+                <h5>&nbsp;Minor</h5>
+            </div>
                 <select>
+                      <option value="" selected="selected">Select a Minor</option> 
                     <option value ="ams">Applied Math & Statistics</option>
                     <option value="bus">Business</option>
                     <option value="eco">Economics</option>
                     <option value="jpn">Japanese Studies</option>
                     <option value="mus">Music</option>
                 </select>
-                <br/>
-                <h5>GPA</h5>
+                <br/><br/>
+                <div class="heading">
+                <h5>&nbsp;GPA</h5>
+            </div>
                 <h6>Major GPA</h6>
                 <input type="text" id="majorgpa"/>
                 <h6>Overall GPA</h6>

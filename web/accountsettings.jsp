@@ -29,6 +29,7 @@
         </style>
     </head>
     <body>
+        <h3>Settings</h3>
         <div class="inputdiv">
             <div class="heading">
                 <h5>&nbsp;Reset Password</h5>
