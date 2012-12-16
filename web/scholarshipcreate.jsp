@@ -74,7 +74,7 @@
             <table class="table-condensed">
                 <tr>
                     <td>
-                        <label><input type="checkbox" /> GPA</label>
+                        <label class="checkbox"><input type="checkbox" /> GPA</label>
                     </td>
                     <td>
                         <input type="text" class="input-small" placeholder="Min GPA" />
@@ -82,7 +82,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <label><input type="checkbox" /> Major</label> 
+                        <label class="checkbox"><input type="checkbox" /> Major</label> 
                     </td>
                     <td>
                         <input type="text" class="input-small" placeholder="Major"/>
@@ -91,7 +91,7 @@
                 
                 <tr>
                     <td>
-                        <label><input type="checkbox" class="checkbox"> Ethnicity</label>
+                        <label class="checkbox"><input type="checkbox" class="checkbox"> Ethnicity</label>
                     </td>
                     <td>
                         <input type="text" class="input-small" placeholder="Ethnicity"/>
@@ -99,7 +99,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <label><input type="checkbox" class="checkbox"> Statement</label>
+                        <label class="checkbox"><input type="checkbox" class="checkbox"> Statement</label>
                     </td>
                     <td>
                         <input type="text" class="input" placeholder="Statement Name"/>
@@ -107,7 +107,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <label><input type="checkbox" class="checkbox"> Recommendation</label>
+                        <label class="checkbox"><input type="checkbox" class="checkbox"> Recommendation</label>
                     </td>
                     <td>
                         <input type="text" class="input" placeholder="Recommendation Name"/>

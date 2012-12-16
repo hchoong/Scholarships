@@ -3,10 +3,10 @@
     Created on : Dec 15, 2012, 6:30:59 PM
     Author     : Howie
 --%>
-<%@include file="include.jsp" %>
-<%@include file="layout_top.jsp" %>
+<%@include file="include/include.jsp" %>
+<%@include file="include/layout_top.jsp" %>
 <head>
-    <title>Create User</title>
+    <title>Create Your Account</title>
     <script language="javascript">        
         function validate(form) {
             var e = form.elements;            
@@ -20,16 +20,16 @@
     </script>
 </head>
 <body>
-    <h1>Create User</h1>
+    <h4>Create Your Account</h4>
     <form action="CreateUser" name="user-create" method="post" class="form-signin" onsubmit="return validate(this);">
         <label for="name">Username: </label>
-        <input type="text" name="name" required placeholder="Username" value=/>
+        <input type="text" name="name" required placeholder="Username">
         <label for="name">Password </label>
         <input type="password" name="password" required placeholder="Password"/>
         <label for="name">Confirm Password: </label>
         <input type="password" name="confirm" required placeholder="Confirm Password"/>
         <label for="name">Email: </label>
-        <input type="email" name="email" required placeholder="Email"/>
+        <input type="email" name="email" required placeholder="Email Address"/>
         <div class="hiddenfield" style="display:none">
         <label for="name">User Type: </label>
         <select name="usertype" >
