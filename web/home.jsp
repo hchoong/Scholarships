@@ -112,7 +112,7 @@
                     <a href="userprofile.jsp" target="main" class="hrefcolor">Profile</a><br /><br />
                     <a href="scholarship.jsp" target="main" class="hrefcolor">Scholarships</a><br /><br />
                     <a href="#" class="hrefcolor">Applications</a><br /><br />
-                    <a href="#" class="hrefcolor">Documents</a><br /><br />
+                    <a href="documents.jsp" target="main"class="hrefcolor">Documents</a><br /><br />
                     <a href="accountsettings.jsp" target="main" class="hrefcolor">Settings</a><br /><br />
                     <a href="login.jsp" class="hrefcolor">Log out</a>
                 </div>
