@@ -15,6 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -34,29 +35,28 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Criteria.findByStatement", query = "SELECT c FROM Criteria c WHERE c.statement = :statement"),
     @NamedQuery(name = "Criteria.findByRecommendation", query = "SELECT c FROM Criteria c WHERE c.recommendation = :recommendation")})
 public class Criteria implements Serializable {
+    @Column(name = "gpa")
+    private Integer gpa;
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "criteria_id")
     private Integer criteriaId;
-    @Basic(optional = false)
-    @Column(name = "gpa")
-    private int gpa;
-    @Basic(optional = false)
+    @Basic(optional = true)
     @Column(name = "major")
     private String major;
-    @Basic(optional = false)
+    @Basic(optional = true)
     @Column(name = "ethnicity")
     private String ethnicity;
-    @Basic(optional = false)
+    @Basic(optional = true)
     @Column(name = "statement")
     private String statement;
-    @Basic(optional = false)
+    @Basic(optional = true)
     @Column(name = "recommendation")
     private String recommendation;
     @JoinColumn(name = "scholarships_id", referencedColumnName = "scholarships_id")
-    @ManyToOne(optional = false)
+    @OneToOne(optional = false)
     private Scholarships scholarshipsId;
 
     public Criteria() {
@@ -81,14 +81,6 @@ public class Criteria implements Serializable {
 
     public void setCriteriaId(Integer criteriaId) {
         this.criteriaId = criteriaId;
-    }
-
-    public int getGpa() {
-        return gpa;
-    }
-
-    public void setGpa(int gpa) {
-        this.gpa = gpa;
     }
 
     public String getMajor() {
@@ -154,6 +146,14 @@ public class Criteria implements Serializable {
     @Override
     public String toString() {
         return "cse333.srs.domain.Criteria[ criteriaId=" + criteriaId + " ]";
+    }
+
+    public Integer getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(Integer gpa) {
+        this.gpa = gpa;
     }
     
 }

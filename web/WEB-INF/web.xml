@@ -20,6 +20,10 @@
         <servlet-name>Logout</servlet-name>
         <servlet-class>cse333.srs.service.Logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ScholarshipCreate</servlet-name>
+        <servlet-class>cse333.srs.service.ScholarshipCreate</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>TestServlet</servlet-name>
         <url-pattern>/TestServlet</url-pattern>
@@ -40,13 +44,17 @@
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ScholarshipCreate</servlet-name>
+        <url-pattern>/ScholarshipCreate</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
     <filter>
         <filter-name>HibernateSessionFilter</filter-name>
