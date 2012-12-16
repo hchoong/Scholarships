@@ -4,8 +4,6 @@
  */
 package cse333.srs.service;
 
-import cse333.srs.dao.UsersDao;
-import cse333.srs.domain.Users;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,10 +15,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Howie
  */
-public class Login extends HttpServlet {
-
-    private static String ERROR_INCORRECT_USERNAME = "e_iu";
-    private static String ERROR_INCORRECT_PASSWORD = "e_ip";
+public class Logout extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -34,26 +29,13 @@ public class Login extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String redirectURL = "";
-        HttpSession session = request.getSession();
-
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        UsersDao dao = new UsersDao();
-        Users user = (Users) dao.findByLogin(username, password);
-
-        if (user == null) {
-            //Return when failed to verify user
-            redirectURL = "login.jsp?p=" + ERROR_INCORRECT_USERNAME;
-        } else {
-            session.setAttribute("user", user);
-            if (user.getType() == 1) {
-                redirectURL = "admin_manage.jsp";
-            } else {
-                redirectURL = "home.jsp";
-            }
+        HttpSession session = request.getSession(false);
+        
+        if (session != null) {
+            session.invalidate();
         }
-        request.getRequestDispatcher(redirectURL).forward(request, response);
+
+        response.sendRedirect("login.jsp?p=logout");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

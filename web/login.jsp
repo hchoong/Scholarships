@@ -4,7 +4,7 @@
     Author     : Eric Wang
 --%>
 
-<%@include file="include.jsp" %>
+<%@include file="include/include.jsp" %>
 <html>
     <head>
         <title>Login Page</title>
@@ -20,6 +20,13 @@
                 <br/><br/>
                 <a href="usercreate.jsp">Create an account</a>
             </form>
+            <ul id="errorList">
+                <li id="incorrectUsernameError" ${ param.p eq 'e_iu' ? "" : "hidden"}>Login failed. Incorrect Username.</li>
+                <li id="serverError" ${ param.p eq 'e_se' ? "" : "hidden"}>Server error encountered.</li>
+                <li id="sessionTimeout" ${ param.p eq 'timeout' ? "" : "hidden"}>Session has time out. Login again.</li>
+                <li id="sessionTimeout" ${ param.p eq 'nosession' ? "" : "hidden"}>Session time out or not existed.</li>
+                <li id="sessionTimeout" ${ param.p eq 'logout' ? "" : "hidden"}>Logout successfully.</li>
+            </ul>
         </div>
     </body>
 </html>

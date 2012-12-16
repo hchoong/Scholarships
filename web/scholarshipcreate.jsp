@@ -3,7 +3,7 @@
     Created on : Dec 15, 2012, 4:43:04 PM
     Author     : Eric Wang
 --%>
-<%@include file="include.jsp" %>
+<%@include file="include/include.jsp" %>
 <head>
     <title>Scholarship Page</title>
 </head>

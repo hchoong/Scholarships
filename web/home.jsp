@@ -110,7 +110,7 @@
                     <a href="#" class="hrefcolor">Applications</a><br /><br />
                     <a href="#" class="hrefcolor">Documents</a><br /><br />
                     <a href="#" class="hrefcolor">Manage</a><br /><br />
-                    <a href="#" class="hrefcolor">Log out</a>
+                    <a href="Logout" class="hrefcolor">Log out</a>
                 </div>
                 <div class="span10 hundredpercentheight">
                     <iframe id="main" class="hundredpercentwidth frameheight" seamless="seamless" >
