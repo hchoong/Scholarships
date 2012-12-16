@@ -4,8 +4,8 @@
  */
 package cse333.srs.service;
 
+import cse333.srs.config.HibernateUtil;
 import cse333.srs.dao.UsersDao;
-import cse333.srs.domain.Users;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Howie
  */
-public class CreateUser extends HttpServlet {
+public class Login extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -30,27 +30,15 @@ public class CreateUser extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String username = request.getParameter("name");
+        String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        int usertype = Integer.parseInt(request.getParameter("usertype"));
-        
-        Users user = new Users();
-        user.setUsername(username);
-        user.setPassword(password);
-        user.setEmail(email);
-        user.setType(usertype);
-        
-        UsersDao dao = new UsersDao();
-        if(dao.findByUsername(username)==null) {
-            dao.saveOrUpdate(user);
+                UsersDao dao = new UsersDao();
+        if(dao.findByLogin(username, password)==null) {
             request.getRequestDispatcher("userprofile.jsp").forward(request, response); 
         }
         else {
-            response.sendRedirect("usercreate.jsp");
+            response.sendRedirect("home.jsp");
         }
-             
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
