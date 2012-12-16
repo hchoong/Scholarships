@@ -14,12 +14,29 @@
         <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
     </head>
+       <style type="text/css">
+            .inputdiv
+            {
+               
+                
+                
+            }
+            .heading
+            {
+                width: 100%;
+                background-color: gainsboro;
+                border-radius: 5px;
+                
+            }
+        </style>
     <body>
          <h3>Documents</h3>
          <table class="table-condensed">
              <tr>
                  <td>
-                    <h5>Resumes</h5>
+                   <div class="heading">
+                <h5>&nbsp;Resume</h5>
+            </div>
                  </td>
                  
              </tr>
@@ -40,7 +57,9 @@
              </tr>
              <tr>
                  <td>
-                     <h5>Transcripts</h5>
+                     <div class="heading">
+                <h5>&nbsp;Transcripts</h5>
+            </div>
                  </td>
                  
              </tr>
@@ -61,7 +80,9 @@
              </tr>
              <tr>
                  <td>
-                     <h5>References</h5>
+                     <div class="heading">
+                <h5>&nbsp;References</h5>
+            </div>
                  </td>
                  
              </tr>
@@ -82,7 +103,9 @@
              </tr>
              <tr>
                  <td>
-                     <h5>Cover Letters</h5>
+                     <div class="heading">
+                <h5>&nbsp;Cover Letters</h5>
+            </div>
                  </td>
                 
              </tr>
