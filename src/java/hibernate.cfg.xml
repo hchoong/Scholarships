@@ -13,5 +13,7 @@
     <mapping class="cse333.srs.domain.Users"/>
     <mapping class="cse333.srs.domain.Students"/>
     <mapping class="cse333.srs.domain.Test"/>
+    <mapping class="cse333.srs.domain.Criteria"/>
+    <mapping class="cse333.srs.domain.Scholarships"/>
   </session-factory>
 </hibernate-configuration>
