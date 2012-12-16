@@ -76,6 +76,10 @@
             {
                 height: 100%;
             }
+            .nintysevenpercentwidth
+            {
+                width: 97%;
+            }
             .black
             {
                 background-color: black;
@@ -109,11 +113,11 @@
                     <a href="scholarship.jsp" target="main" class="hrefcolor">Scholarships</a><br /><br />
                     <a href="#" class="hrefcolor">Applications</a><br /><br />
                     <a href="#" class="hrefcolor">Documents</a><br /><br />
-                    <a href="#" class="hrefcolor">Manage</a><br /><br />
-                    <a href="#" class="hrefcolor">Log out</a>
+                    <a href="accountsettings.jsp" target="main" class="hrefcolor">Settings</a><br /><br />
+                    <a href="login.jsp" class="hrefcolor">Log out</a>
                 </div>
                 <div class="span10 hundredpercentheight">
-                    <iframe id="main" class="hundredpercentwidth frameheight" seamless="seamless" >
+                    <iframe id="main" class="nintysevenpercentwidth frameheight" seamless="seamless" >
                     </iframe>
                 </div>
             </div>
