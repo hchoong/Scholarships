@@ -9,6 +9,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.exception.ConstraintViolationException;
 
 /**
  *
@@ -31,7 +32,7 @@ public abstract class HibernateGenericDao implements GenericDao {
     }
 
     @Override
-    public void saveOrUpdate(Object o) {
+    public void saveOrUpdate(Object o) throws ConstraintViolationException {
         SessionFactory factory = HibernateUtil.getSessionFactory();
         Session session = factory.getCurrentSession();
         session.saveOrUpdate(o);

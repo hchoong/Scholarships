@@ -114,7 +114,7 @@
                     <a href="#" class="hrefcolor">Applications</a><br /><br />
                     <a href="documents.jsp" target="main"class="hrefcolor">Documents</a><br /><br />
                     <a href="accountsettings.jsp" target="main" class="hrefcolor">Settings</a><br /><br />
-                    <a href="login.jsp" class="hrefcolor">Log out</a>
+                    <a href="Logout" class="hrefcolor">Log out</a>
                 </div>
                 <div class="span10 hundredpercentheight">
                     <iframe id="main" class="nintysevenpercentwidth frameheight" seamless="seamless" >

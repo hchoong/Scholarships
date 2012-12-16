@@ -4,35 +4,38 @@
     Author     : Eric Wang
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@include file="include/include.jsp" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>        
         <title>Scholarship</title>
-        <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
-        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link href="css/jquery.dataTables.css" rel="stylesheet" media="screen">
+        <script src="js/jquery.dataTables.js"></script>
         <script type="text/javascript">
+            $(document).ready(function() {
+                $('#scholarshiptable').dataTable();
+            } );
             function toggleCreateScholarship()
             {
                 document.getElementById('create').style.display='hide';
-            }
+            }            
         </script>
         <style type="text/css">
             body
             {
                 margin-right: auto;
                 margin-left: auto;
+                width: 800px;
             }
             .scholarshipcreate
             {
                 text-align: right; 
             }
-            .content
-            {
-                margin-right: auto;
-                margin-left: auto;
+            th {
+                text-align: left;
             }
+            
+
         </style>
     </head>
     <body onload="toggleCreateScholarship()">
@@ -42,7 +45,7 @@
             <a class="btn btn-danger" id="createscholarshipbtn" href="scholarshipcreate.jsp">Create a Scholarship</a>
         </div>
         <div class="content">
-            <table id="schoarshiptable" class="table-condensed table-bordered">
+            <table id="scholarshiptable">
                 <thead>
                     <tr>
                         <th>Scholarship Name</th>
@@ -52,12 +55,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                <c:forEach var="s" begin="0" items="${requestScope.scholarships}">
                     <tr>
-                        <td>Nasa</td>
-                        <td>Physics</td>
-                        <td>2012-2013</td>
-                        <td>March-12-2013</td>
-                    </tr>
+                        <td>${s.name}</td> 
+                        <td>${s.major}</td> 
+                        <td>${s.academicYear}</td>
+                        <td>${s.deadline}</td>
+                    </tr>                         
+                </c:forEach>
                 </tbody>
             </table>
         </div>
