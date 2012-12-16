@@ -114,6 +114,7 @@
                     <a href="userapplications.jsp" target="main" class="hrefcolor">Applications</a><br /><br />
                     <a href="documents.jsp" target="main"class="hrefcolor">Documents</a><br /><br />
                     <a href="accountsettings.jsp" target="main" class="hrefcolor">Settings</a><br /><br />
+                    <a hfre="#" target="main" class="hfrefcolor">Help</a><br /><br />
                     <a href="Logout" class="hrefcolor">Log out</a>
                 </div>
                 <div class="span10 hundredpercentheight">
