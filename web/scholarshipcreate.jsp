@@ -3,20 +3,9 @@
     Created on : Dec 15, 2012, 4:43:04 PM
     Author     : Eric Wang
 --%>
-
+<%@include file="include.jsp" %>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Scholarship Page</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-    $(function() {
-        $( "#datepicker" ).datepicker();
-    });
-    </script>
 </head>
 <body>
     <h1>Scholarship</h1>
@@ -48,13 +37,13 @@
         <div class="control-group">
             <label class="control-label" for="quantity">Quantity: </label>
             <div class="controls">
-                <input type="text" name="quantity" value=""/>
+                <input type="number" name="quantity" value=""/>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="deadline">Deadline: </label>
             <div class="controls">
-                <input type="text" name="deadline" id="datepicker" value=""/>
+                <input type="date" name="deadline" value=""/>
             </div>
         </div>
         <div class="control-group">
