@@ -51,8 +51,18 @@ input[type="date"] {
 
 .heading
 {
-                width: 100%;
-                background-color: gainsboro;
-                border-radius: 5px;
+    width: 100%;
+    background-color: gainsboro;
+    border-radius: 5px;
+}
+
+.textarea-big
+{
+    width: 98%;
+}
+
+.form-box
+{
+    width: 50%;
 }
 
