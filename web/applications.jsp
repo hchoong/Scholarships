@@ -13,19 +13,38 @@
         <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
         <link type="text/css" rel="stylesheet" href="css/all.css"/>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
         <style>
             .form-width
             {
                 width: 70%;
             }
+            .review
+            {
+                
+            }
+            .offer
+            {
+                
+            }
         </style>
-        
+        <script type="text/javascript">
+             $(document).ready(function() {
+                 if(${sessionScope.user.type}!=1){
+                    $('.offer').hide();
+                    $('#qty').hide();
+                } if(${sessionScope.user.type}!=2){
+                    $('.review').hide();
+                }
+            } );
+        </script>
+
     </head>
-    <body>
+    <body onload="hideElements()">
         <h3>Applications for ""</h3>
         <br/>
         <div class="form-width">
-            <div align="right"><label class="label label-info">Quantity: 2</label></div>
+            <div id="qty" align="right"><label class="label label-info">Quantity:</label></div>
 
             <div class="heading"><h5>Applications</h5></div>
             <table class="table" id="applicationtable">
@@ -34,9 +53,10 @@
                         <th>Applicant Name</th>
                         <th>GPA</th>
                         <th>Class</th>
-                        <th>Rank</th>
+                        <th>Points</th>
                         <th>Status</th>
-                        <th>Offer Scholarship</th>
+                        <th class="offer">Offer Scholarship</th>
+                        <th class="review">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,7 +66,8 @@
                         <td>U4</td>
                         <td>1</td>
                         <td>Pending</td>
-                        <td><button class="btn btn-danger">Award</button></td>
+                        <td class="offer"><button class="btn btn-danger">Award</button></td>
+                        <td class="review"><button class="btn btn-danger">Review</td>
                     </tr>
                     <tr>
                         <td>ABC</td>
@@ -54,7 +75,8 @@
                         <td>U2</td>
                         <td>2</td>
                         <td>Not Offered</td>
-                        <td><button class="btn btn-danger" disabled="true">Award</button></td>
+                        <td class="offer"><button class="btn btn-danger" disabled="true">Award</button></td>
+                        <td class="review"><button class="btn btn-danger">Review</td>
                     </tr>
                 </tbody>
             </table>
