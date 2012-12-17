@@ -13,6 +13,8 @@
     </head>
     <body>
         <h3>Home </h3>
+        <h5>Welcome, ${sessionScope.user.username} !</h5>
+        <h5><div id="welcome"></div></h5>
         <pre class="pre-scrollable textblock"><h5><strong>Announcements</strong></h5><small>No current announcements.</small></pre>
     </body>
 </html>
