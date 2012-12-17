@@ -15,11 +15,8 @@
         <link type="text/css" rel="stylesheet" href="css/all.css" />
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
-        <style>
-            .input-xsmall
-            {
-                width: 15px;
-            }
+        <style type="text/css">
+            
             .text-font
             {
                 font-size: 15px;
@@ -30,12 +27,20 @@
             }
             body
             {
+                
+            }
+            .content
+            {
+                position: absolute;
                 margin-left: auto;
                 margin-right: auto;
+                left: 0;
+                right: 0;
             }
         </style>
     </head>
     <body>
+        <div class="content">
         <div name="top">
             <h3>Review Applicant</h3>
             <div class="form-box">
@@ -63,8 +68,8 @@
                     
         </div>
         <div name="bottom" class="form-box">
-            <%@include  file="userapplicationinfo.jsp" %> >
+            <%@include  file="userapplicationinfo.jsp" %>
         </div>
-        
+        </div>
     </body>
 </html>

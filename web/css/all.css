@@ -65,4 +65,19 @@ input[type="date"] {
 {
     width: 50%;
 }
-
+.input-xsmall
+{
+    width: 15px;
+}
+.input-smaller
+{
+    width: 60px;
+}
+.input-medium
+{
+    width: 150px;
+}
+.btn-small
+{
+    
+}
