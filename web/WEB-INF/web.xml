@@ -24,6 +24,10 @@
         <servlet-name>ScholarshipCreate</servlet-name>
         <servlet-class>cse333.srs.service.ScholarshipCreate</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CreateProfile</servlet-name>
+        <servlet-class>cse333.srs.service.CreateProfile</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>TestServlet</servlet-name>
         <url-pattern>/TestServlet</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>ScholarshipCreate</servlet-name>
         <url-pattern>/ScholarshipCreate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateProfile</servlet-name>
+        <url-pattern>/CreateProfile</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

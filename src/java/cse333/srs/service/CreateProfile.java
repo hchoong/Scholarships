@@ -4,7 +4,9 @@
  */
 package cse333.srs.service;
 
+import cse333.srs.dao.StudentsDao;
 import cse333.srs.dao.UsersDao;
+import cse333.srs.domain.Students;
 import cse333.srs.domain.Users;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,7 +20,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Howie
  */
-public class CreateUser extends HttpServlet {
+public class CreateProfile extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -32,29 +34,57 @@ public class CreateUser extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String username = request.getParameter("name");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        int usertype = Integer.parseInt(request.getParameter("usertype"));
-        
-        Users user = new Users();
-        user.setUsername(username);
-        user.setPassword(password);
-        user.setEmail(email);
-        user.setType(usertype);
-        
-        UsersDao dao = new UsersDao();
-        if(dao.findByUsername(username)==null) {
-            dao.saveOrUpdate(user);
-            HttpSession session = request.getSession();
-            session.setAttribute("user", user);
-            request.getRequestDispatcher("home.jsp").forward(request, response); 
+        HttpSession session = request.getSession();
+
+        String firstname = request.getParameter("firstname");
+        String middlename = request.getParameter("middlename");
+        String lastname = request.getParameter("lastname");
+        String address = request.getParameter("address");
+        String address2 = request.getParameter("address2");
+        String city = request.getParameter("city");
+        String state = request.getParameter("state");
+        String zipcode = request.getParameter("zipcode");
+        String country = request.getParameter("country");
+        String sex = request.getParameter("sex");
+        String ethnicity = request.getParameter("ethnicity");
+        String veteran = request.getParameter("veteran");
+        String disabled = request.getParameter("disable");
+        String major = request.getParameter("major");
+        String minor = request.getParameter("minor");
+        String gpa = request.getParameter("gpa");
+
+        Users user = (Users) session.getAttribute("user");
+        Students s = user.getStudents();
+        if (s == null) {
+            s = new Students();
         }
-        else {
-            request.getRequestDispatcher("usercreate.jsp").forward(request, response);
+        s.setAddress(address);
+        s.setAddress2(address2);
+        s.setCity(city);
+        s.setCountry(country);
+        s.setEthnicity(ethnicity);
+        s.setFirstname(firstname);
+        s.setGpa(gpa);
+        s.setLastname(lastname);
+        s.setGraduationYear(null);
+        s.setMajor(major);
+        s.setMiddlename(middlename);
+        s.setMinor(minor);
+        s.setSex(sex);
+        s.setState(state);
+        s.setZipcode(zipcode);
+
+        user.setStudents(s);
+        s.setUserId(user);
+        if (s != null) {
+            StudentsDao sdao = new StudentsDao();
+            sdao.update(s);
+        } else {
+            UsersDao udao = new UsersDao();
+            udao.update(user);
         }
-             
+        request.getRequestDispatcher("home.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

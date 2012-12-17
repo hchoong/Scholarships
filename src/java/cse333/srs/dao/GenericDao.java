@@ -15,6 +15,8 @@ public interface GenericDao {
     public Object findById(Long id);
 
     public void saveOrUpdate(Object o);
+    
+    public void update(Object o);
 
     public void delete(Object o);
 
