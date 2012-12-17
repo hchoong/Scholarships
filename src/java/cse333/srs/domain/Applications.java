@@ -32,7 +32,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Applications.findAll", query = "SELECT a FROM Applications a"),
     @NamedQuery(name = "Applications.findByApplicationsId", query = "SELECT a FROM Applications a WHERE a.applicationsId = :applicationsId"),
-    @NamedQuery(name = "Applications.findByDateApplied", query = "SELECT a FROM Applications a WHERE a.dateApplied = :dateApplied")})
+    @NamedQuery(name = "Applications.findByDateApplied", query = "SELECT a FROM Applications a WHERE a.dateApplied = :dateApplied"),
+    @NamedQuery(name = "Applications.findByStatus", query = "SELECT a FROM Applications a WHERE a.status = :status")})
 public class Applications implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -49,9 +50,12 @@ public class Applications implements Serializable {
     @Lob
     @Column(name = "resume")
     private String resume;
+    @Basic(optional = false)
     @Column(name = "date_applied")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateApplied;
+    @Column(name = "status")
+    private String status;
     @JoinColumn(name = "students_id", referencedColumnName = "student_id")
     @ManyToOne(optional = false)
     private Students studentsId;
@@ -109,6 +113,14 @@ public class Applications implements Serializable {
 
     public void setDateApplied(Date dateApplied) {
         this.dateApplied = dateApplied;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Students getStudentsId() {
