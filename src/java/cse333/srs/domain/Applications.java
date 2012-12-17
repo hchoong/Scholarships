@@ -49,7 +49,6 @@ public class Applications implements Serializable {
     @Lob
     @Column(name = "resume")
     private String resume;
-    @Basic(optional = false)
     @Column(name = "date_applied")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateApplied;
