@@ -113,7 +113,7 @@
                     <a href="homecontent.jsp" target="main" class="hrefcolor">Home</a><br /><br />
                     <a id="profile" href="userprofile.jsp" target="main" class="hrefcolor">Profile<br /><br /></a>
                     <a href="ScholarshipList" target="main" class="hrefcolor">Scholarships</a><br /><br />
-                    <a id="applications" href="Applications" target="main" class="hrefcolor">Applications<br /><br /></a>
+                    <a id="applications" href="MyApplications" target="main" class="hrefcolor">Applications<br /><br /></a>
                     <a id="documents"href="documents.jsp" target="main"class="hrefcolor">Documents<br /><br /></a>
                     <a href="accountsettings.jsp" target="main" class="hrefcolor">Settings</a><br /><br />
                     <a id="manage" href="admin_manage.jsp" target="main" class="hrefcolor">Manage<br/><br/></a>

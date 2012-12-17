@@ -49,7 +49,7 @@
                     </tr>                         
                 </c:forEach>
                 <tr>
-                    <td>Citi</td>
+                    <td><a href="userapplicationinfo.jsp">Citi</a></td>
                     <td>10/13/12</td>
                     <td>Citi Group</td>
                     <td>Not Accepted</td>

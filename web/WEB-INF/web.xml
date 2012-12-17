@@ -48,6 +48,10 @@
         <servlet-name>UserApplicationInfo</servlet-name>
         <servlet-class>cse333.srs.service.UserApplicationInfo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MyApplications</servlet-name>
+        <servlet-class>cse333.srs.service.MyApplications</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>TestServlet</servlet-name>
         <url-pattern>/TestServlet</url-pattern>
@@ -96,10 +100,12 @@
         <servlet-name>UserApplicationInfo</servlet-name>
         <url-pattern>/UserApplicationInfo</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyApplications</servlet-name>
+        <url-pattern>/MyApplications</url-pattern>
+    </servlet-mapping>
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>

@@ -4,9 +4,11 @@
  */
 package cse333.srs.service;
 
-import cse333.srs.dao.UsersDao;
+import cse333.srs.dao.ApplicationsDao;
 import cse333.srs.domain.Users;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Howie
  */
-public class CreateUser extends HttpServlet {
+public class MyApplications extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -31,35 +33,13 @@ public class CreateUser extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String username = request.getParameter("name");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        int usertype = Integer.parseInt(request.getParameter("usertype"));
-        
-        Users user = new Users();
-        user.setUsername(username);
-        user.setPassword(password);
-        user.setEmail(email);
-        user.setType(usertype);
-        
-        UsersDao dao = new UsersDao();
-        if(dao.findByUsername(username)==null) {
-            dao.saveOrUpdate(user);
-            HttpSession session = request.getSession();
-            Users current = (Users)session.getAttribute("user");
-            if(current!=null && current.getType()==1) {
-                request.getRequestDispatcher("homecontent.jsp").forward(request, response); 
-            }
-            else {
-                session.setAttribute("user", user);
-                request.getRequestDispatcher("home.jsp").forward(request, response); 
-            }            
-        }
-        else {
-            request.getRequestDispatcher("usercreate.jsp?error=incorrect").forward(request, response);
-        }
-             
+        HttpSession session = request.getSession();        
+        Users user = (Users) session.getAttribute("user");
+        ApplicationsDao dao = new ApplicationsDao();
+        int id = user.getStudents().getStudentId();
+        List l = dao.findByStudentsId(id);
+        request.setAttribute("applications", l);
+        request.getRequestDispatcher("userapplications.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -37,11 +37,11 @@ public class Applications extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();        
         Users user = (Users) session.getAttribute("user");
-        ApplicationsDao dao = new ApplicationsDao();
-        int id = user.getStudents().getStudentId();
-        List l = dao.findByStudentsId(id);
-        request.setAttribute("applications", l);
-        request.getRequestDispatcher("userapplications.jsp").forward(request, response);
+//        ApplicationsDao dao = new ApplicationsDao();
+//        int id = user.getStudents().getStudentId();
+//        List l = dao.findByStudentsId(id);
+//        request.setAttribute("applications", l);
+        request.getRequestDispatcher("applications.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
