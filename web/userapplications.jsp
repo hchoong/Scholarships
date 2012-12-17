@@ -39,6 +39,14 @@
                 </tr>
             </thead>
             <tbody>
+                <c:forEach var="s" begin="0" items="${requestScope.UserApplications}">
+                    <tr>
+                        <td><a href="UserApplicationInfo?id=${s.applicationId}">${s.name}</a></td> 
+                        <td></td> 
+                        <td>${s.academicYear}</td>
+                        <td>${s.deadline}</td>
+                    </tr>                         
+                </c:forEach>
                 <tr>
                     <td>JP Morgan Chase</td>
                     <td>12/12/12</td>

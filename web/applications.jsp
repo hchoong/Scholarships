@@ -37,6 +37,11 @@
                     $('.review').hide();
                 }
             } );
+            function award(id,id2)
+            {
+                document.getElementById(id).innerHTML = "Offered";
+                document.getElementById(id2).disabled = 'true';
+            }
         </script>
 
     </head>
@@ -65,8 +70,8 @@
                         <td>3.99</td>
                         <td>U4</td>
                         <td>1</td>
-                        <td>Pending</td>
-                        <td class="offer"><button class="btn btn-danger">Award</button></td>
+                        <td><label id="lbl1">Pending</label></td>
+                        <td class="offer"><button id="offer1" class="btn btn-danger" onclick="award('lbl1','offer1')">Award</button></td>
                         <td class="review"><button class="btn btn-danger">Review</td>
                     </tr>
                     <tr>
