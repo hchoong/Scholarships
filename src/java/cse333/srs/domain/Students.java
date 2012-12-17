@@ -9,6 +9,7 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -94,7 +95,7 @@ public class Students implements Serializable {
     @Column(name = "middlename")
     private String middlename;
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
-    @OneToOne(optional = false)
+    @OneToOne(optional = false, fetch = FetchType.EAGER)
     private Users userId;
 
     public Students() {
@@ -104,18 +105,15 @@ public class Students implements Serializable {
         this.studentId = studentId;
     }
 
-    public Students(Integer studentId, String address, String city, String state, String country, String zipcode, String major, String gpa, String minor, String sex, Date graduationYear, String firstname, String lastname) {
+    public Students(Integer studentId, String address, String city, String state, String country, String zipcode, String gpa, String sex, String firstname, String lastname) {
         this.studentId = studentId;
         this.address = address;
         this.city = city;
         this.state = state;
         this.country = country;
         this.zipcode = zipcode;
-        this.major = major;
         this.gpa = gpa;
-        this.minor = minor;
         this.sex = sex;
-        this.graduationYear = graduationYear;
         this.firstname = firstname;
         this.lastname = lastname;
     }

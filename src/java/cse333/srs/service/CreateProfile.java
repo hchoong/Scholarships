@@ -55,34 +55,47 @@ public class CreateProfile extends HttpServlet {
 
         Users user = (Users) session.getAttribute("user");
         Students s = user.getStudents();
+        StudentsDao sdao = new StudentsDao();
         if (s == null) {
             s = new Students();
-        }
-        s.setAddress(address);
-        s.setAddress2(address2);
-        s.setCity(city);
-        s.setCountry(country);
-        s.setEthnicity(ethnicity);
-        s.setFirstname(firstname);
-        s.setGpa(gpa);
-        s.setLastname(lastname);
-        s.setGraduationYear(null);
-        s.setMajor(major);
-        s.setMiddlename(middlename);
-        s.setMinor(minor);
-        s.setSex(sex);
-        s.setState(state);
-        s.setZipcode(zipcode);
-
-        user.setStudents(s);
-        s.setUserId(user);
-        if (s != null) {
-            StudentsDao sdao = new StudentsDao();
-            sdao.update(s);
+            s.setAddress(address);
+            s.setAddress2(address2);
+            s.setCity(city);
+            s.setCountry(country);
+            s.setEthnicity(ethnicity);
+            s.setFirstname(firstname);
+            s.setGpa(gpa);
+            s.setLastname(lastname);
+            s.setGraduationYear(null);
+            s.setMajor(major);
+            s.setMiddlename(middlename);
+            s.setMinor(minor);
+            s.setSex(sex);
+            s.setState(state);
+            s.setZipcode(zipcode);
+            s.setUserId(user);
+            sdao.saveOrUpdate(s);
         } else {
-            UsersDao udao = new UsersDao();
-            udao.update(user);
+            s.setAddress(address);
+            s.setAddress2(address2);
+            s.setCity(city);
+            s.setCountry(country);
+            s.setEthnicity(ethnicity);
+            s.setFirstname(firstname);
+            s.setGpa(gpa);
+            s.setLastname(lastname);
+            s.setGraduationYear(null);
+            s.setMajor(major);
+            s.setMiddlename(middlename);
+            s.setMinor(minor);
+            s.setSex(sex);
+            s.setState(state);
+            s.setZipcode(zipcode);
+            s.setUserId(user);
+            user.setStudents(s);
+            sdao.update(s);
         }
+        session.setAttribute("user", user);
         request.getRequestDispatcher("home.jsp").forward(request, response);
 
     }

@@ -18,9 +18,19 @@
             return true;
         }
     </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            if(${sessionScope.user.type}==1) {
+                $(".hiddenfield").removeAttr("hidden");
+                $("h4").html("Create An Account");
+            }
+        });
+    </script>
 </head>
 <body>
-    <h4>Create Your Account</h4>
+    <div class="header" align="center">
+        <h4>Create Your Account</h4>
+    </div>
     <form action="CreateUser" name="user-create" method="post" class="form-signin" onsubmit="return validate(this);">
         <label for="name">Username: </label>
         <input type="text" name="name" required placeholder="Username">
@@ -30,14 +40,14 @@
         <input type="password" name="confirm" required placeholder="Confirm Password"/>
         <label for="name">Email: </label>
         <input type="email" name="email" required placeholder="Email Address"/>
-        <div class="hiddenfield" style="display:none">
-        <label for="name">User Type: </label>
-        <select name="usertype" >
-            <option value="1">Admin</option>
-            <option value="2">Reviewer</option>
-            <option value="3">Creator</option>
-            <option value="4" selected>Student</option>
-        </select> 
+        <div class="hiddenfield" hidden>
+            <label for="name">User Type: </label>
+            <select name="usertype" >
+                <option value="1">Admin</option>
+                <option value="2">Reviewer</option>
+                <option value="3">Creator</option>
+                <option value="4" selected>Student</option>
+            </select> 
         </div>
         <br/>
         <div class="button-group">
