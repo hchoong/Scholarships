@@ -20,13 +20,13 @@
     <body>
         <div name="top">
             <div class="heading"><h5>Student Application Info</h5></div>
-            <table>
+            <table class="table-condensed">
                 <tr>
                     <td>
                         <label>Scholarship Name:</label>
                     </td>
                     <td>
-                        <div></div>
+                        <div>Citi</div>
                     </td>
                 </tr>
                 <tr>
@@ -34,7 +34,7 @@
                         <label>Applicant Name:</label>
                     </td>
                     <td>
-                        <div></div>
+                        <div>Eric Wang</div>
                     </td>
                 </tr>
                 <tr>
@@ -42,13 +42,13 @@
                         <label>Major(s):</label>
                     </td>
                     <td>
-                        <div></div>
+                        <div>Computer Science</div>
                     </td>
                     <td>
                         <label>GPA:</label>
                     </td>
                     <td>
-                        <div></div>
+                        <div>3.5</div>
                     </td>
                 </tr>
                 <tr>
@@ -62,7 +62,7 @@
                         <label>Undergraduate Standing:</label>
                     </td>
                     <td>
-                        <div></div>
+                        <div>U4</div>
                     </td>
                 </tr>
             </table>
@@ -76,9 +76,13 @@
 
         <div id="my-tab-content" class="tab-content">
             <div class="tab-pane active" id="statement">
+                This is a personal statement.
             </div>
-            <div class="tab-pane" id="recommendation"> 
+            <div class="tab-pane" id="recommendation">
+                I recommend Eric Wang, he is a good person.
             </div>
         </div>
+            <br/>
+            <br/>
     </body>
 </html>

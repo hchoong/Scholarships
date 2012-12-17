@@ -18,7 +18,6 @@
              $(document).ready(function() {
                  if(${sessionScope.user.type}!=1){
                     $('.offer').hide();
-                    $('#qty').hide();
                 } if(${sessionScope.user.type}!=2){
                     $('.review').hide();
                 }
@@ -32,10 +31,10 @@
 
     </head>
     <body onload="hideElements()">
-        <h3>Applications for ""</h3>
+        <h3>Applications for "Citi"</h3>
         <br/>
         <div class="form-width">
-            <div id="qty" align="right"><label class="label label-info">Quantity:</label></div>
+            
 
             <div class="heading"><h5>Applications</h5></div>
             <table class="table" id="applicationtable">
@@ -52,22 +51,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Wolfie Seawolf</td>
+                        <td>Eric Wang</td>
                         <td>3.99</td>
                         <td>U4</td>
                         <td>1</td>
                         <td><label id="lbl1">Pending</label></td>
                         <td class="offer"><button id="offer1" class="btn btn-danger" onclick="award('lbl1','offer1')">Award</button></td>
-                        <td class="review"><button class="btn btn-danger">Review</td>
+                        <td class="review"><a class="btn btn-danger" href="reviewapplication.jsp">Review</a></td>
                     </tr>
                     <tr>
-                        <td>ABC</td>
-                        <td>3.0</td>
-                        <td>U2</td>
-                        <td>2</td>
-                        <td>Not Offered</td>
-                        <td class="offer"><button class="btn btn-danger" disabled="true">Award</button></td>
-                        <td class="review"><button class="btn btn-danger">Review</td>
+                        <td>Howard Choong</td>
+                        <td>3.8</td>
+                        <td>U4</td>
+                        <td>9</td>
+                        <td><label id="lbl1">Reviewed</label></td>
+                        <td class="offer"><button id="offer1" class="btn btn-danger" onclick="award('lbl1','offer1')">Award</button></td>
+                        <td class="review"><a class="btn btn-danger" href="reviewapplication.jsp" disabled="true">Review</a></td>
                     </tr>
                 </tbody>
             </table>

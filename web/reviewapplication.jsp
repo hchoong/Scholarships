@@ -60,7 +60,7 @@
                 <div class="heading"><h5>Reviewer's Comments</h5></div>
                 <textarea class="textarea-big" type="textarea" cols="0" rows="5"  ></textarea>
                 <div align="right">
-               <button class="btn btn-danger" name="submitreview">SUBMIT REVIEW</button> 
+               <a class="btn btn-danger" name="submitreview" href="homecontent.jsp">SUBMIT REVIEW</a> 
             </div>
             </div>
             
