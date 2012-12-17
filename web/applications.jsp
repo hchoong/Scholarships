@@ -14,20 +14,6 @@
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
         <link type="text/css" rel="stylesheet" href="css/all.css"/>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <style>
-            .form-width
-            {
-                width: 70%;
-            }
-            .review
-            {
-                
-            }
-            .offer
-            {
-                
-            }
-        </style>
         <script type="text/javascript">
              $(document).ready(function() {
                  if(${sessionScope.user.type}!=1){
