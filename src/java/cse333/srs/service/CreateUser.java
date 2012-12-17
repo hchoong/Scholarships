@@ -47,11 +47,17 @@ public class CreateUser extends HttpServlet {
         if(dao.findByUsername(username)==null) {
             dao.saveOrUpdate(user);
             HttpSession session = request.getSession();
-            session.setAttribute("user", user);
-            request.getRequestDispatcher("homecontent.jsp").forward(request, response); 
+            Users current = (Users)session.getAttribute("user");
+            if(current!=null && current.getType()==1) {
+                request.getRequestDispatcher("home.jsp").forward(request, response); 
+            }
+            else {
+                session.setAttribute("user", user);
+                request.getRequestDispatcher("home.jsp").forward(request, response); 
+            }            
         }
         else {
-            request.getRequestDispatcher("usercreate.jsp").forward(request, response);
+            request.getRequestDispatcher("usercreate.jsp?error=incorrect").forward(request, response);
         }
              
     }

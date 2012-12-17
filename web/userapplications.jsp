@@ -39,12 +39,12 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach var="s" begin="0" items="${requestScope.UserApplications}">
+                <c:forEach var="s" begin="0" items="${requestScope.applications}">
                     <tr>
-                        <td><a href="UserApplicationInfo?id=${s.applicationId}">${s.name}</a></td> 
-                        <td></td> 
-                        <td>${s.academicYear}</td>
-                        <td>${s.deadline}</td>
+                        <td>${s.scholarshipsId.name}</td>
+                        <td>${s.dateApplied}</td>
+                        <td>${s.studentsId.gpa}</td> 
+                        <td>${s.status}</td>                        
                     </tr>                         
                 </c:forEach>
                 <tr>
