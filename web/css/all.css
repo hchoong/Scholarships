@@ -65,4 +65,84 @@ input[type="date"] {
 {
     width: 50%;
 }
+.sidebar-divs
+{
+    width: 200px;
+    height: 35px;
+}
+.backcolorlightgrey
+{
+    background-color: #E9E9E9;
+}
+.nintypercentwidth
+{
+    width: 85%;
+}
+.tenpercentwidth
+{
+    width: 15%;
+}
+.hundredpercentwidth
+{
+    width: 100%;
+}
+.color_red
+{
+    background-color: red;
+}
+.eighthundredwidth
+{
+    width: 800px;
+}
+.content
+{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hrefcolor
+{
+    color: white;
+}
+.navfont
+{
+    font-size: 15px;
+    font-family: calibri;
+    vertical-align:text-top;
+}
+.topbannerwidth
+{
+    width: 960px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.heightonehundred
+{
+    height: 100%;
+}
+.frameheight
+{
+    height: 800px;
+}
+.hundredpercentheight
+{
+    height: 100%;
+}
+.nintysevenpercentwidth
+{
+    width: 97%;
+}
+.black
+{
+    background-color: black;
+}
+.textblock
+{
+    text-align: left;
+    vertical-align:text-top;
+}
+.navpadding
+{
+    padding-left: 30px;
+}
 

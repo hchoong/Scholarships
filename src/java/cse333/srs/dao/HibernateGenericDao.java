@@ -37,6 +37,13 @@ public abstract class HibernateGenericDao implements GenericDao {
         Session session = factory.getCurrentSession();
         session.saveOrUpdate(o);
     }
+    
+    @Override
+    public void update(Object o) {
+        SessionFactory factory = HibernateUtil.getSessionFactory();
+        Session session = factory.getCurrentSession();
+        session.update(o);
+    }
 
     @Override
     public void delete(Object object) {

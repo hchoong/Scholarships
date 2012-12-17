@@ -3,97 +3,10 @@
     Created on : Nov 16, 2012, 6:01:22 PM
     Author     : Eric Wang
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@include file="include/include.jsp"%>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Stony Brook University Scholarship System</title>
-        <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
-        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
-        <style type="text/css">
-            .sidebar-divs
-            {
-                width: 200px;
-                height: 35px;
-            }
-            .backcolorlightgrey
-            {
-                background-color: #E9E9E9;
-            }
-            .nintypercentwidth
-            {
-                width: 85%;
-            }
-            .tenpercentwidth
-            {
-                width: 15%;
-            }
-            .hundredpercentwidth
-            {
-                width: 100%;
-            }
-            .color_red
-            {
-                background-color: red;
-            }
-            .eighthundredwidth
-            {
-                width: 800px;
-            }
-            .content
-            {
-                width: 1000px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hrefcolor
-            {
-                color: white;
-            }
-            .navfont
-            {
-                font-size: 15px;
-                font-family: calibri;
-                vertical-align:text-top;
-            }
-            .topbannerwidth
-            {
-                width: 960px;
-                margin-left:auto;
-                margin-right:auto;
-            }
-            .heightonehundred
-            {
-                height: 100%;
-            }
-            .frameheight
-            {
-                height: 800px;
-            }
-            .hundredpercentheight
-            {
-                height: 100%;
-            }
-            .nintysevenpercentwidth
-            {
-                width: 97%;
-            }
-            .black
-            {
-                background-color: black;
-            }
-            .textblock
-            {
-                text-align: left;
-                vertical-align:text-top;
-            }
-            .navpadding
-            {
-                padding-left: 30px;
-            }
-        </style>
         <script type="text/javascript">
             function loadHomeContent()
             {
@@ -123,7 +36,5 @@
                 </div>
             </div>
         </div>
-        
-
     </body>
 </html>

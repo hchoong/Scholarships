@@ -6,6 +6,7 @@ package cse333.srs.domain;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,6 +17,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -23,13 +25,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "users")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Users.findAll", query = "SELECT u FROM Users u"),
     @NamedQuery(name = "Users.findByUserId", query = "SELECT u FROM Users u WHERE u.userId = :userId"),
     @NamedQuery(name = "Users.findByUsername", query = "SELECT u FROM Users u WHERE u.username = :username"),
     @NamedQuery(name = "Users.findByPassword", query = "SELECT u FROM Users u WHERE u.password = :password"),
-    @NamedQuery(name = "Users.findByFirstname", query = "SELECT u FROM Users u WHERE u.firstname = :firstname"),
-    @NamedQuery(name = "Users.findByLastname", query = "SELECT u FROM Users u WHERE u.lastname = :lastname"),
     @NamedQuery(name = "Users.findByEmail", query = "SELECT u FROM Users u WHERE u.email = :email"),
     @NamedQuery(name = "Users.findByType", query = "SELECT u FROM Users u WHERE u.type = :type")})
 public class Users implements Serializable {
@@ -45,16 +46,12 @@ public class Users implements Serializable {
     @Basic(optional = false)
     @Column(name = "password")
     private String password;
-    @Column(name = "firstname")
-    private String firstname;
-    @Column(name = "lastname")
-    private String lastname;
     @Column(name = "email")
     private String email;
     @Basic(optional = false)
     @Column(name = "type")
     private int type;
-    @OneToOne(mappedBy = "userId", fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "userId", fetch = FetchType.EAGER)
     private Students students;
 
     public Users() {
@@ -93,22 +90,6 @@ public class Users implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
     }
 
     public String getEmail() {

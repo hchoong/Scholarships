@@ -5,12 +5,10 @@
 package cse333.srs.domain;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,6 +19,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -28,20 +27,25 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "students")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Students.findAll", query = "SELECT s FROM Students s"),
     @NamedQuery(name = "Students.findByStudentId", query = "SELECT s FROM Students s WHERE s.studentId = :studentId"),
     @NamedQuery(name = "Students.findByAddress", query = "SELECT s FROM Students s WHERE s.address = :address"),
-    @NamedQuery(name = "Students.findByHomePhone", query = "SELECT s FROM Students s WHERE s.homePhone = :homePhone"),
-    @NamedQuery(name = "Students.findByCellPhone", query = "SELECT s FROM Students s WHERE s.cellPhone = :cellPhone"),
-    @NamedQuery(name = "Students.findBySchoolId", query = "SELECT s FROM Students s WHERE s.schoolId = :schoolId"),
-    @NamedQuery(name = "Students.findByYear", query = "SELECT s FROM Students s WHERE s.year = :year"),
+    @NamedQuery(name = "Students.findByAddress2", query = "SELECT s FROM Students s WHERE s.address2 = :address2"),
+    @NamedQuery(name = "Students.findByCity", query = "SELECT s FROM Students s WHERE s.city = :city"),
+    @NamedQuery(name = "Students.findByState", query = "SELECT s FROM Students s WHERE s.state = :state"),
+    @NamedQuery(name = "Students.findByCountry", query = "SELECT s FROM Students s WHERE s.country = :country"),
+    @NamedQuery(name = "Students.findByZipcode", query = "SELECT s FROM Students s WHERE s.zipcode = :zipcode"),
     @NamedQuery(name = "Students.findByMajor", query = "SELECT s FROM Students s WHERE s.major = :major"),
     @NamedQuery(name = "Students.findByGpa", query = "SELECT s FROM Students s WHERE s.gpa = :gpa"),
     @NamedQuery(name = "Students.findByMinor", query = "SELECT s FROM Students s WHERE s.minor = :minor"),
-    @NamedQuery(name = "Students.findByGender", query = "SELECT s FROM Students s WHERE s.gender = :gender"),
-    @NamedQuery(name = "Students.findByGraduationMonth", query = "SELECT s FROM Students s WHERE s.graduationMonth = :graduationMonth"),
-    @NamedQuery(name = "Students.findByGraduationYear", query = "SELECT s FROM Students s WHERE s.graduationYear = :graduationYear")})
+    @NamedQuery(name = "Students.findBySex", query = "SELECT s FROM Students s WHERE s.sex = :sex"),
+    @NamedQuery(name = "Students.findByEthnicity", query = "SELECT s FROM Students s WHERE s.ethnicity = :ethnicity"),
+    @NamedQuery(name = "Students.findByGraduationYear", query = "SELECT s FROM Students s WHERE s.graduationYear = :graduationYear"),
+    @NamedQuery(name = "Students.findByFirstname", query = "SELECT s FROM Students s WHERE s.firstname = :firstname"),
+    @NamedQuery(name = "Students.findByLastname", query = "SELECT s FROM Students s WHERE s.lastname = :lastname"),
+    @NamedQuery(name = "Students.findByMiddlename", query = "SELECT s FROM Students s WHERE s.middlename = :middlename")})
 public class Students implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -52,39 +56,45 @@ public class Students implements Serializable {
     @Basic(optional = false)
     @Column(name = "address")
     private String address;
+    @Column(name = "address2")
+    private String address2;
     @Basic(optional = false)
-    @Column(name = "home_phone")
-    private String homePhone;
+    @Column(name = "city")
+    private String city;
     @Basic(optional = false)
-    @Column(name = "cell_phone")
-    private String cellPhone;
+    @Column(name = "state")
+    private String state;
     @Basic(optional = false)
-    @Column(name = "school_id")
-    private int schoolId;
+    @Column(name = "country")
+    private String country;
     @Basic(optional = false)
-    @Column(name = "year")
-    private String year;
-    @Basic(optional = false)
+    @Column(name = "zipcode")
+    private String zipcode;
     @Column(name = "major")
     private String major;
     @Basic(optional = false)
     @Column(name = "gpa")
-    private BigInteger gpa;
-    @Basic(optional = false)
+    private String gpa;
     @Column(name = "minor")
     private String minor;
     @Basic(optional = false)
-    @Column(name = "gender")
-    private String gender;
-    @Basic(optional = false)
-    @Column(name = "graduation_month")
-    private String graduationMonth;
-    @Basic(optional = false)
+    @Column(name = "sex")
+    private String sex;
+    @Column(name = "ethnicity")
+    private String ethnicity;
     @Column(name = "graduation_year")
     @Temporal(TemporalType.DATE)
     private Date graduationYear;
+    @Basic(optional = false)
+    @Column(name = "firstname")
+    private String firstname;
+    @Basic(optional = false)
+    @Column(name = "lastname")
+    private String lastname;
+    @Column(name = "middlename")
+    private String middlename;
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(optional = false)
     private Users userId;
 
     public Students() {
@@ -94,19 +104,20 @@ public class Students implements Serializable {
         this.studentId = studentId;
     }
 
-    public Students(Integer studentId, String address, String homePhone, String cellPhone, int schoolId, String year, String major, BigInteger gpa, String minor, String gender, String graduationMonth, Date graduationYear) {
+    public Students(Integer studentId, String address, String city, String state, String country, String zipcode, String major, String gpa, String minor, String sex, Date graduationYear, String firstname, String lastname) {
         this.studentId = studentId;
         this.address = address;
-        this.homePhone = homePhone;
-        this.cellPhone = cellPhone;
-        this.schoolId = schoolId;
-        this.year = year;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.zipcode = zipcode;
         this.major = major;
         this.gpa = gpa;
         this.minor = minor;
-        this.gender = gender;
-        this.graduationMonth = graduationMonth;
+        this.sex = sex;
         this.graduationYear = graduationYear;
+        this.firstname = firstname;
+        this.lastname = lastname;
     }
 
     public Integer getStudentId() {
@@ -125,36 +136,44 @@ public class Students implements Serializable {
         this.address = address;
     }
 
-    public String getHomePhone() {
-        return homePhone;
+    public String getAddress2() {
+        return address2;
     }
 
-    public void setHomePhone(String homePhone) {
-        this.homePhone = homePhone;
+    public void setAddress2(String address2) {
+        this.address2 = address2;
     }
 
-    public String getCellPhone() {
-        return cellPhone;
+    public String getCity() {
+        return city;
     }
 
-    public void setCellPhone(String cellPhone) {
-        this.cellPhone = cellPhone;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public int getSchoolId() {
-        return schoolId;
+    public String getState() {
+        return state;
     }
 
-    public void setSchoolId(int schoolId) {
-        this.schoolId = schoolId;
+    public void setState(String state) {
+        this.state = state;
     }
 
-    public String getYear() {
-        return year;
+    public String getCountry() {
+        return country;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
     }
 
     public String getMajor() {
@@ -165,11 +184,11 @@ public class Students implements Serializable {
         this.major = major;
     }
 
-    public BigInteger getGpa() {
+    public String getGpa() {
         return gpa;
     }
 
-    public void setGpa(BigInteger gpa) {
+    public void setGpa(String gpa) {
         this.gpa = gpa;
     }
 
@@ -181,20 +200,20 @@ public class Students implements Serializable {
         this.minor = minor;
     }
 
-    public String getGender() {
-        return gender;
+    public String getSex() {
+        return sex;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
-    public String getGraduationMonth() {
-        return graduationMonth;
+    public String getEthnicity() {
+        return ethnicity;
     }
 
-    public void setGraduationMonth(String graduationMonth) {
-        this.graduationMonth = graduationMonth;
+    public void setEthnicity(String ethnicity) {
+        this.ethnicity = ethnicity;
     }
 
     public Date getGraduationYear() {
@@ -203,6 +222,30 @@ public class Students implements Serializable {
 
     public void setGraduationYear(Date graduationYear) {
         this.graduationYear = graduationYear;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getMiddlename() {
+        return middlename;
+    }
+
+    public void setMiddlename(String middlename) {
+        this.middlename = middlename;
     }
 
     public Users getUserId() {
