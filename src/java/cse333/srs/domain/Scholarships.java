@@ -42,6 +42,8 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Scholarships.findByAcademicYear", query = "SELECT s FROM Scholarships s WHERE s.academicYear = :academicYear")})
 public class Scholarships implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "scholarshipsId")
+    private List<Applications> applicationsList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "scholarshipsId")
     private List<Criteria> criteriaList;
     @Basic(optional = false)
     @Column(name = "deadline")
@@ -196,6 +198,15 @@ public class Scholarships implements Serializable {
 
     public void setCriteriaList(List<Criteria> criteriaList) {
         this.criteriaList = criteriaList;
+    }
+
+    @XmlTransient
+    public List<Applications> getApplicationsList() {
+        return applicationsList;
+    }
+
+    public void setApplicationsList(List<Applications> applicationsList) {
+        this.applicationsList = applicationsList;
     }
     
 }

@@ -32,6 +32,10 @@
         <servlet-name>Scholarship</servlet-name>
         <servlet-class>cse333.srs.service.Scholarship</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Apply</servlet-name>
+        <servlet-class>cse333.srs.service.Apply</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>TestServlet</servlet-name>
         <url-pattern>/TestServlet</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>Scholarship</servlet-name>
         <url-pattern>/Scholarship</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Apply</servlet-name>
+        <url-pattern>/Apply</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

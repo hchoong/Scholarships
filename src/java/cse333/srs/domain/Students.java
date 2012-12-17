@@ -6,7 +6,9 @@ package cse333.srs.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,11 +18,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -48,6 +52,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Students.findByLastname", query = "SELECT s FROM Students s WHERE s.lastname = :lastname"),
     @NamedQuery(name = "Students.findByMiddlename", query = "SELECT s FROM Students s WHERE s.middlename = :middlename")})
 public class Students implements Serializable {
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "studentsId")
+    private List<Applications> applicationsList;
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -277,6 +283,15 @@ public class Students implements Serializable {
     @Override
     public String toString() {
         return "cse333.srs.domain.Students[ studentId=" + studentId + " ]";
+    }
+
+    @XmlTransient
+    public List<Applications> getApplicationsList() {
+        return applicationsList;
+    }
+
+    public void setApplicationsList(List<Applications> applicationsList) {
+        this.applicationsList = applicationsList;
     }
     
 }

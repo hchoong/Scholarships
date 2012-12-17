@@ -4,17 +4,10 @@
     Author     : Eric Wang
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@include file="include/include.jsp" %>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Apply for a scholarship</title>
-        <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
-        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
-        <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.css"/>
-        <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.min.css"/>
-        <link type="text/css" rel="stylesheet" href="css/all.css"/>
         <style type="text/css">
             .dropdown
             {
@@ -22,6 +15,11 @@
             }
         </style>
         <script type="text/javascript">
+            $(document).ready(function() {                
+                $("#hide").hide();
+            } );
+        </script>
+        <script type="text/javascript">            
             function toggleFile()
             {
                 document.getElementById('selectstatement').style.display='none';
@@ -68,104 +66,86 @@
     <body onload="toggleFile()">
         <h3>Apply</h3>
         <div name="top">
-            <table class="table-condensed">
-                <tr>
-                    <td>Last Name:</td>
-                    <td><input type="text" class="input-medium" /></td>
-                    <td>First Name:</td>
-                    <td><input type="text" class="input-medium" /></td>
-                </tr>
-                <tr>
-                    <td>Email:</td>
-                    <td><input type="text" class="input-large" /></td>
-                </tr>
-                <tr>
-                    <td>Primary Phone:</td>
-                    <td><input type="text" class="input-medium" /></td>
-                </tr>
-                <tr>
-                    <td>Major:</td>
-                    <td><input type="text" class="input-small" /></td>
-                </tr>
-                <tr>
-                    <td>GPA:</td>
-                    <td><input type="text" class="input-smaller" /></td>
-                </tr>
-                <tr>
-                    <td>Statement</td>
-                    <td>
-                        <input type="text" id="textboxstatement" class="input" disabled="true"/>
-                        <a href="#" id="choosestatement" onclick="showSelect('selectstatement','confirm1','cancel1')" >Choose</a> |
-                        <a href="#" name="uploadstatement" id="uploadstatement" onclick="showSelect('filestatement','confirm1','cancel1')">Upload</a><br/>
-                        <select name="selectstatement" id="selectstatement" class="dropdown">
-                            <option>statement1</option>
-                            <option>statement2</option>
-                        </select>
-                        <input type="file" name="filestatement" id="filestatement">
+            <form>
+                <table class="table-condensed">
+                    <tr>
+                        <td>Last Name:</td>
+                        <td><input type="text" name="lastname" class="input-medium" value="${sessionScope.user.students.firstname}"/></td>
+                        <td>First Name:</td>
+                        <td><input type="text" name="firstname" class="input-medium" value="${sessionScope.user.students.lastname}"/></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="text" name="email" class="input-large" value="${sessionScope.user.email}"/></td>
+                    </tr>
+                    <tr>
+                        <td>Major:</td>
+                        <td><input type="text" name="major" class="input-small" value="${sessionScope.user.students.major}"/></td>
+                    </tr>
+                    <tr>
+                        <td>GPA:</td>
+                        <td><input type="text" name="gpa" class="input-smaller" value="${sessionScope.user.students.gpa}"/></td>
+                    </tr>
+                    <tr>
+                        <td>Statement</td>
+                        <td>
+                            <input type="text" name="statement" id="textboxstatement" class="input" disabled="true"/>
+                            <a href="#" id="choosestatement" onclick="showSelect('selectstatement','confirm1','cancel1')" >Choose</a> |
+                            <a href="#" name="uploadstatement" id="uploadstatement" onclick="showSelect('filestatement','confirm1','cancel1')">Upload</a><br/>
+                            <select name="selectstatement" id="selectstatement" class="dropdown">
+                                <option>statement1</option>
+                                <option>statement2</option>
+                            </select>
+                            <input type="file" name="filestatement" id="filestatement">
                             <button class="btn btn-primary" id="confirm1" onclick="confirm('textboxstatement','confirm1','selectstatement','filestatement')">Confirm</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Recommendation</td>
-                    <td>
-                        <input type="text" class="input" id="textboxrec"disabled="true"/>
-                        <a href="#" id="chooserec" onclick="showSelect('selectrec','confirm2')">Choose</a> |
-                        <a href="#" name="uploadrec" id="uploadrec" onclick="showSelect('filerec','confirm2')">Upload</a><br/>
-                        <select name="selectrec" id="selectrec" class="dropdown">
-                            <option>recommendation 1</option>
-                            <option>recommendation 2</option>
-                        </select>
-                        <input type="file" name="filerec" id="filerec" />
-                        <button class="btn btn-primary" id="confirm2" onclick="confirm('textboxrec','confirm2','selectrec','filerec')">Confirm</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Resume</td>
-                    <td>
-                        <input type="text" class="input" id="textboxresume" disabled="true"/>
-                        <a href="#" id="chooseresume" onclick="showSelect('selectresume','confirm3')">Choose</a> |
-                        <a href="#" name="uploadresume" id="uploadresume" onclick="showSelect('fileresume','confirm3')">Upload</a><br/>
-                        <select name="selectresume" id="selectresume" class="dropdown">
-                            <option>resume1</option>
-                            <option>resume2</option>
-                        </select>
-                        <input type="file" name="fileresume" id="fileresume">
-                        <button class="btn btn-primary" id="confirm3" onclick="confirm('textboxresume','confirm3','selectresume','fileresume')">Confirm</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td align="right">
-                        <div class="btn-group">
-                            <a class="btn btn-danger">Submit</a>
-                            <a class="btn btn-danger" href="home.jsp">Cancel</a>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Recommendation</td>
+                        <td>
+                            <input type="text" class="input" name="recommendation" id="textboxrec"disabled="true"/>
+                            <a href="#" id="chooserec" onclick="showSelect('selectrec','confirm2')">Choose</a> |
+                            <a href="#" name="uploadrec" id="uploadrec" onclick="showSelect('filerec','confirm2')">Upload</a><br/>
+                            <select name="selectrec" id="selectrec" class="dropdown">
+                                <option>recommendation 1</option>
+                                <option>recommendation 2</option>
+                            </select>
+                            <input type="file" name="filerec" id="filerec" />
+                            <button class="btn btn-primary" id="confirm2" onclick="confirm('textboxrec','confirm2','selectrec','filerec')">Confirm</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Resume</td>
+                        <td>
+                            <input type="text" class="input" name="resume" id="textboxresume" disabled="true"/>
+                            <a href="#" id="chooseresume" onclick="showSelect('selectresume','confirm3')">Choose</a> |
+                            <a href="#" name="uploadresume" id="uploadresume" onclick="showSelect('fileresume','confirm3')">Upload</a><br/>
+                            <select name="selectresume" id="selectresume" class="dropdown">
+                                <option>resume1</option>
+                                <option>resume2</option>
+                            </select>
+                            <input type="file" name="fileresume" id="fileresume">
+                            <button class="btn btn-primary" id="confirm3" onclick="confirm('textboxresume','confirm3','selectresume','fileresume')">Confirm</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td align="right">
+                            <div class="btn-group">
+                                <a class="btn btn-danger">Submit</a>
+                                <a class="btn btn-danger" href="home.jsp">Cancel</a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
         </div>
 
         <div name="bottom">
             <br/>
-            <div class="heading"><h5>Scholarship Information</h5></div>
-            <label>Scholarship Name:</label>
-            <label>Award Quantity: 2</label>
-            <label>Amount: $1000</label>
-            <label>Academic Year: 2012-2013</label>
-            <label>Deadline: 1/20/13</label>
-
-            <div>
-                <div class="heading"><h5>Description</h5></div>
-                <pre class="pre-scrollable textblock"></pre>
-            </div>
-
-            <div>
-                <div class="heading"><h5>Qualifications</h5></div>
-                <pre class="pre-scrollable textblock">The criteria, e.g., gpa, major etc should also be loaded here.</pre>
-            </div>
+            <%@include file="scholarshipinfo.jsp" %>
         </div>
-
-    </body>
+    </form>
+</body>
 </html>

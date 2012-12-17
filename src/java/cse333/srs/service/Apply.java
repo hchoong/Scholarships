@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Howie
  */
-public class Scholarship extends HttpServlet {
+public class Apply extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -37,9 +37,8 @@ public class Scholarship extends HttpServlet {
         ScholarshipsDao dao = new ScholarshipsDao();
         Scholarships s = (Scholarships) dao.findByScholarshipsId(id);
         session.setAttribute("scholarship", s);
-        request.getRequestDispatcher("scholarshipinfo.jsp").forward(request, response);
+        request.getRequestDispatcher("apply.jsp").forward(request, response);
     }
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

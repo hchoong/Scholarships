@@ -74,6 +74,7 @@ public class CreateProfile extends HttpServlet {
             s.setState(state);
             s.setZipcode(zipcode);
             s.setUserId(user);
+            user.setStudents(s);
             sdao.saveOrUpdate(s);
         } else {
             s.setAddress(address);

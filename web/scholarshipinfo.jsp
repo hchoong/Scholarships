@@ -4,40 +4,40 @@
     Author     : Eric Wang
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@include file="include/include.jsp" %>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Scholarship Info</title>
-        <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
-        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
-        <link type="text/css" rel="stylesheet" href="css/all.css"/>
-        <style type="text/css">
-            body
-            {
-                width: 80%;
-            }
-        </style>
+        <script type="text/javascript">
+            $(document).ready(function() {                
+                if(${sessionScope.user.type}!=4){
+                    $("#hide").hide();
+                }
+            } );
+        </script>
     </head>
     <body>
-        <h3>"Insert Name of Scholarship"</h3>
-        <div align="right"><a class="btn btn-danger">APPLY</a></div>
-        
+        <h3>${requestScope.scholarship.name}</h3>
+        <div align="right"><a id="hide" class="btn btn-danger" href="Apply?id=${sessionScope.scholarship.scholarshipsId}">APPLY</a></div>
+
         <div class="heading"><h5>Information</h5></div>
-        <label>Award Quantity: 2</label>
-        <label>Amount: $1000</label>
-        <label>Academic Year: 2012-2013</label>
-        <label>Deadline: 1/20/13</label>
-        
+        <label>Award Quantity: ${sessionScope.scholarship.quantity}</label>
+        <label>Amount: $${sessionScope.scholarship.amount}</label>
+        <label>Academic Year: ${sessionScope.scholarship.academicYear}</label>
+        <label>Deadline: ${sessionScope.scholarship.deadline}</label>
+
         <div>
-        <div class="heading"><h5>Description</h5></div>
-        <pre class="pre-scrollable textblock"></pre>
+            <div class="heading"><h5>Description</h5></div>
+            <pre class="pre-scrollable textblock">${sessionScope.scholarship.descriptions}</pre>
         </div>
-        
+
         <div>
-        <div class="heading"><h5>Qualifications</h5></div>
-        <pre class="pre-scrollable textblock">The criteria, e.g., gpa, major etc should also be loaded here.</pre>
+            <div class="heading"><h5>Qualifications</h5></div>
+            <!--        <pre class="pre-scrollable textblock">The criteria, e.g., gpa, major etc should also be loaded here.</pre>-->
+            <pre class="pre-scrollable textblock">${sessionScope.scholarship.qualifications}</pre>
+        </div>
+        <div align="right">
+            <input class="btn btn-danger" type="button" onclick="javascript:history.go(-1)" value="Back"/>
         </div>
     </body>
 </html>
