@@ -41,7 +41,7 @@ public class ApplyScholarship extends HttpServlet {
         Scholarships scholarship = (Scholarships) session.getAttribute("scholarship");
         app.setStudentsId(student);
         app.setScholarshipsId(scholarship);
-        
+        app.setStatus("Pending Review");
         String statement = request.getParameter("statement");
         String recommendation = request.getParameter("recommendation");
         String resume = request.getParameter("resume");
