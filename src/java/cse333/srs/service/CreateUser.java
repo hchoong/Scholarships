@@ -48,7 +48,7 @@ public class CreateUser extends HttpServlet {
             dao.saveOrUpdate(user);
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
-            request.getRequestDispatcher("home.jsp").forward(request, response); 
+            request.getRequestDispatcher("homecontent.jsp").forward(request, response); 
         }
         else {
             request.getRequestDispatcher("usercreate.jsp").forward(request, response);

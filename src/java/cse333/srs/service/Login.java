@@ -47,11 +47,13 @@ public class Login extends HttpServlet {
             redirectURL = "login.jsp?p=" + ERROR_INCORRECT_USERNAME;
         } else {
             session.setAttribute("user", user);
+            redirectURL = "home.jsp";
+            /*
             if (user.getType() == 1) {
                 redirectURL = "admin_manage.jsp";
             } else {
                 redirectURL = "home.jsp";
-            }
+            }*/
         }
         request.getRequestDispatcher(redirectURL).forward(request, response);
     }
