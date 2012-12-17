@@ -78,7 +78,7 @@ public class Applications implements Serializable {
     public void setApplicationsId(Integer applicationsId) {
         this.applicationsId = applicationsId;
     }
-
+    
     public String getStatement() {
         return statement;
     }
