@@ -64,8 +64,8 @@
                         <td>3.8</td>
                         <td>U4</td>
                         <td>9</td>
-                        <td><label id="lbl1">Reviewed</label></td>
-                        <td class="offer"><button id="offer1" class="btn btn-danger" onclick="award('lbl1','offer1')">Award</button></td>
+                        <td><label id="lbl2">Reviewed</label></td>
+                        <td class="offer"><button id="offer2" class="btn btn-danger" onclick="award('lbl2^','offer2')">Award</button></td>
                         <td class="review"><a class="btn btn-danger" href="reviewapplication.jsp" disabled="true">Review</a></td>
                     </tr>
                 </tbody>
