@@ -14,11 +14,11 @@
         <script type="text/javascript">
             $(document).ready(function() {
                 $('#scholarshiptable').dataTable();
+                
+                if(${sessionScope.user.type}!=1){
+                    $("#create").hide();
+                }
             } );
-            function toggleCreateScholarship()
-            {
-                document.getElementById('create').style.display='hide';
-            }            
         </script>
         <style type="text/css">
          
@@ -33,10 +33,9 @@
 
         </style>
     </head>
-    <body onload="toggleCreateScholarship()">
+    <body>
         <h3>Scholarships</h3>
         <div class="scholarshipcreate" id="create">
-            
             <a class="btn btn-danger" id="createscholarshipbtn" href="scholarshipcreate.jsp">Create a Scholarship</a>
         </div>
         <br/>
