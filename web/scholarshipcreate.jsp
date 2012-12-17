@@ -122,7 +122,7 @@
 
                 
         </div>
-        <div class="button-group">
+        <div class="button-group" align="center">
             <input class="btn btn-primary" type="submit" value="Submit"/>
             <input class="btn btn-primary" type="button" onclick="javascript:history.go(-1)" value="Cancel"/>
             <input class="btn btn-primary" type="reset" value="Reset"/>
