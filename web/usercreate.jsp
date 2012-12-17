@@ -19,7 +19,10 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
-            if(${sessionScope.user.type}==1) {
+            if(${param.error eq 'incorrect'}) {
+                alert("Username has existed. Choose another one.");
+            }
+            if(${session.user.type eq 1}) {
                 $(".hiddenfield").removeAttr("hidden");
                 $("h3").html("Create An Account");
             }

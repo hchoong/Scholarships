@@ -33,8 +33,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Applications.findAll", query = "SELECT a FROM Applications a"),
     @NamedQuery(name = "Applications.findByApplicationsId", query = "SELECT a FROM Applications a WHERE a.applicationsId = :applicationsId"),
     @NamedQuery(name = "Applications.findByDateApplied", query = "SELECT a FROM Applications a WHERE a.dateApplied = :dateApplied"),
-    @NamedQuery(name = "Applications.findByStatus", query = "SELECT a FROM Applications a WHERE a.status = :status")})
+    @NamedQuery(name = "Applications.findByStatus", query = "SELECT a FROM Applications a WHERE a.status = :status"),
+    @NamedQuery(name = "Applications.findByStudentsId", query = "SELECT a FROM Applications a WHERE a.studentsId = :studentsId")})
 public class Applications implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,7 +52,6 @@ public class Applications implements Serializable {
     @Lob
     @Column(name = "resume")
     private String resume;
-    @Basic(optional = false)
     @Column(name = "date_applied")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateApplied;
@@ -163,5 +164,4 @@ public class Applications implements Serializable {
     public String toString() {
         return "cse333.srs.domain.Applications[ applicationsId=" + applicationsId + " ]";
     }
-    
 }
