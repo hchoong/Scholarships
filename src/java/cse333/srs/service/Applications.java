@@ -38,7 +38,8 @@ public class Applications extends HttpServlet {
         HttpSession session = request.getSession();        
         Users user = (Users) session.getAttribute("user");
         ApplicationsDao dao = new ApplicationsDao();
-        List l = dao.findByStudentsId(user.getUserId());
+        int id = user.getStudents().getStudentId();
+        List l = dao.findByStudentsId(id);
         request.setAttribute("applications", l);
         request.getRequestDispatcher("userapplications.jsp").forward(request, response);
     }

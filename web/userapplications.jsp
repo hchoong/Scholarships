@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="include/include.jsp" %>
 <html>
     <head>
@@ -41,29 +42,17 @@
             <tbody>
                 <c:forEach var="s" begin="0" items="${requestScope.applications}">
                     <tr>
-                        <td>${s.scholarshipsId.name}</td>
+                        <td><a href="userapplicationinfo.jsp">${s.scholarshipsId.name}</a></td>
                         <td>${s.dateApplied}</td>
                         <td>${s.studentsId.gpa}</td> 
                         <td>${s.status}</td>                        
                     </tr>                         
                 </c:forEach>
                 <tr>
-                    <td>JP Morgan Chase</td>
-                    <td>12/12/12</td>
-                    <td>JP Morgan Chase</td>
-                    <td>Pending</td>
-                </tr>
-                <tr>
                     <td>Citi</td>
                     <td>10/13/12</td>
                     <td>Citi Group</td>
                     <td>Not Accepted</td>
-                </tr>
-                <tr>
-                    <td>Omnicon</td>
-                    <td>11/05/12</td>
-                    <td>Omnicon</td>
-                    <td>Offered</td>
                 </tr>
             </tbody>
         </table>
