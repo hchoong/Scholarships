@@ -12,6 +12,7 @@
         <title>Stony Brook University Scholarship System</title>
         <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <style type="text/css">
             .red
             {
@@ -87,12 +88,10 @@
         </style>
         <script type="text/javascript">
             $(document).ready(function() {
-                var type = sessionScope.user.type;
-                if(type!=1){
+                if(${sessionScope.user.type}!=1){
                     $("#manage").hide();
                 }
-                if(type!=3)
-                {
+                if(${sessionScope.user.type}!=4){
                     $("#profile").hide();
                     $("#applications").hide();
                     $("#documents").hide();
@@ -100,18 +99,7 @@
             } );
             function loadHomeContent()
             {
-                var type = sessionScope.user.type;
                 document.getElementById("main").src="homecontent.jsp";
-                if(type!=1)
-                {
-                    document.getElementById("manage").style.display='none';
-                }
-                if(type!=4)
-                {
-                    document.getElementById("manage").style.display='none';
-                    document.getElementById("manage").style.display='none';
-                    document.getElementById("m").style.display='none';
-                }
             }
         </script>
     </head>

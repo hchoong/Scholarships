@@ -33,7 +33,7 @@ Admin Manage Page -- all the link to view the DB
     </div>
     <br/>
     <div class="create">
-        <span><a href="CreateUser">Create Reviewers</a></span>
+        <span><a href="usercreate.jsp">Create Reviewers</a></span>
     </div>
     <br/>
     <div class="approve">
