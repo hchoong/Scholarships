@@ -66,7 +66,7 @@
     <body onload="toggleFile()">
         <h3>Apply</h3>
         <div name="top">
-            <form>
+            <form action="ApplyScholarship" name="scholarship-create" method="post">
                 <table class="table-condensed">
                     <tr>
                         <td>Last Name:</td>
@@ -134,7 +134,7 @@
                         <td></td>
                         <td align="right">
                             <div class="btn-group">
-                                <a class="btn btn-danger">Submit</a>
+                                <input type="submit" class="btn btn-danger" value="Submit">
                                 <a class="btn btn-danger" href="home.jsp">Cancel</a>
                             </div>
                         </td>

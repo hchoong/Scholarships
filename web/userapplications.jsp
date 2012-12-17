@@ -1,18 +1,15 @@
-
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="include/include.jsp" %>
-<!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Applications</title>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="css/jquery.dataTables.css" rel="stylesheet" media="screen">
+        <script src="js/jquery.dataTables.js"></script>
         <script type="text/javascript">
-            $(document).ready(function() {
-                $('#applicationtable').dataTable();
-                alert('sdf');
+            $(document).ready(function() {              
+                $("#applicationtable").dataTable();
+                if(${ param.alert eq 'success'}) {
+                    alert("Congratulation! You have applied a scholarship.");
+                }
             } );
         </script>
         <style type="text/css">
@@ -42,15 +39,6 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach var="s" begin="0" items="${requestScope.scholarships}">
-                    <tr>
-                        <td>${s.name}</td> 
-                        <td></td> 
-                        <td>${s.academicYear}</td>
-                        <td>${s.deadline}</td>
-                    </tr>                         
-                </c:forEach>
-                    <!--
                 <tr>
                     <td>JP Morgan Chase</td>
                     <td>12/12/12</td>
@@ -68,10 +56,8 @@
                     <td>11/05/12</td>
                     <td>Omnicon</td>
                     <td>Offered</td>
-                </tr>-->
-
+                </tr>
             </tbody>
-
         </table>
     </body>
 </html>
