@@ -52,7 +52,7 @@
                 <tbody>
                 <c:forEach var="s" begin="0" items="${requestScope.scholarships}">
                     <tr>
-                        <td><a href="${sessionScope.user.type eq 1?"Scholarship":"Applications"}?id=${s.scholarshipsId}">${s.name}</a></td> 
+                        <td><a href="${sessionScope.user.type eq 4?"Scholarship":"Applications"}?id=${s.scholarshipsId}">${s.name}</a></td> 
                         <td></td> 
                         <td>${s.academicYear}</td>
                         <td>${s.deadline}</td>
