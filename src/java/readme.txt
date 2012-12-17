@@ -8,6 +8,7 @@ Web design: Twitter bootstrap, CSS
 Controller: HttpServlet
 Backend database: local MySQL database
 Database connector: MySQL(Connector/J Driver), Hibernate, JPA annotations
+Repository: GitHub
 
 Project package
 Web Pages: all css, javascript and jsp pages
