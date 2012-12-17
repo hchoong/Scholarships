@@ -19,6 +19,7 @@
                 width: 70%;
             }
         </style>
+        
     </head>
     <body>
         <h3>Applications for ""</h3>
@@ -27,7 +28,7 @@
             <div align="right"><label class="label label-info">Quantity: 2</label></div>
 
             <div class="heading"><h5>Applications</h5></div>
-            <table class="table">
+            <table class="table" id="applicationtable">
                 <thead>
                     <tr>
                         <th>Applicant Name</th>

@@ -4,7 +4,6 @@
     Author     : Howie
 --%>
 <%@include file="include/include.jsp" %>
-<%@include file="include/layout_top.jsp" %>
 <head>
     <title>Create Your Account</title>
     <script language="javascript">        
@@ -22,14 +21,14 @@
         $(document).ready(function(){
             if(${sessionScope.user.type}==1) {
                 $(".hiddenfield").removeAttr("hidden");
-                $("h4").html("Create An Account");
+                $("h3").html("Create An Account");
             }
         });
     </script>
 </head>
 <body>
-    <div class="header" align="center">
-        <h4>Create Your Account</h4>
+    <div class="header">
+        <h3>Create Your Account</h3>
     </div>
     <form action="CreateUser" name="user-create" method="post" class="form-signin" onsubmit="return validate(this);">
         <label for="name">Username: </label>
@@ -51,8 +50,8 @@
         </div>
         <br/>
         <div class="button-group">
-            <input class="btn btn-primary" type="submit" value="Create"/>
-            <input class="btn btn-primary" type="reset" value="Reset"/>
+            <input class="btn btn-danger" type="submit" value="Create"/>
+            <input class="btn btn-danger" type="reset" value="Reset"/>
         </div>
     </form>
 </body>

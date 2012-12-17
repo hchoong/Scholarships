@@ -4,7 +4,7 @@
     Author     : Howie
 Admin Manage Page -- all the link to view the DB
 --%>
-<%@include file="include/layout_top.jsp" %>
+<%@include file="include/include.jsp" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:choose>
     <c:when test="${sessionScope.user eq null}">
@@ -17,28 +17,24 @@ Admin Manage Page -- all the link to view the DB
     </c:otherwise>
 </c:choose>
 <head>
-    <title>Admin Manage Page</title>
+    <title>Admin Management Page</title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
 </head>
 <div id="content">
-    <h3>Admin Manage Page</h3>
-    <div class="home">
-        <span><a href="home.jsp">Home Content</a></span>
-    </div>
-    <br/>
-    <div class="view">
-        <span><a href="#">View Applicants</a></span>
-        <span><a href="#">View Creators</a></span>
-        <span><a href="#">View Reviewers</a></span>
-        <span><a href="ScholarshipList">View Scholarships</a></span>
-    </div>
-    <br/>
-    <div class="create">
-        <span><a href="usercreate.jsp">Create Reviewers</a></span>
-    </div>
-    <br/>
-    <div class="approve">
-        <span><a href="">Approve Creators</a></span>
-        <span><a href="">Approve Scholarships</a></span>
-    </div>
-    <br/>
+<h3>Administrator Management</h3>
+<div class="heading">View</div>
+<ul>
+    <li><a href="#">Reviewers</a></li>
+    <li><a href="#">Students</a></li>
+</ul>
+
+<div class="heading">Create</div>
+<ul>
+    <li><a href="usercreate.jsp">Create User</a></li>
+</ul>
+ 
+
 </div>
