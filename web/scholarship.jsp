@@ -39,12 +39,6 @@
             <a class="btn btn-danger" id="createscholarshipbtn" href="scholarshipcreate.jsp">Create a Scholarship</a>
         </div>
         <br/>
-        <%@  page import="cse333.srs.domain.Users"%>
-        <%
-            String fullstring = request.getSession().getAttribute("user").toString();
-            String usertype = fullstring.substring(fullstring.length()-3,fullstring.length()-1);
-            out.println(usertype);
-         %>
         <div class="content">
             <table id="scholarshiptable">
                 <thead>
@@ -55,11 +49,10 @@
                         <th>Deadline</th>
                     </tr>
                 </thead>
-                
                 <tbody>
                 <c:forEach var="s" begin="0" items="${requestScope.scholarships}">
                     <tr>
-                        <td><a href="Scholarship?id=${s.scholarshipsId}">${s.name}</a></td> 
+                        <td><a href="${sessionScope.user.type eq 1?"Scholarship":"Applications"}?id=${s.scholarshipsId}">${s.name}</a></td> 
                         <td></td> 
                         <td>${s.academicYear}</td>
                         <td>${s.deadline}</td>
